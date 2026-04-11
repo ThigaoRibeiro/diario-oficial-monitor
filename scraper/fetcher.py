@@ -35,7 +35,7 @@ def _get_latest_edition_doweb(prefeitura: dict) -> tuple[int, str]:
         resp = client.get(listing_url)
         resp.raise_for_status()
 
-    soup = BeautifulSoup(resp.text, "lxml")
+    soup = BeautifulSoup(resp.text, "html.parser")
     links = soup.find_all("a", href=re.compile(r"/portal/diario-oficial/ver/(\d+)"))
 
     if not links:
