@@ -1,0 +1,117 @@
+name: Diário Oficial — Scrape Diário
+
+on:
+  # Roda todo dia às 08:00 horário de Brasília (11:00 UTC)
+  schedule:
+    - cron: "0 11 * * 1-6"   # seg–sáb (diário oficial não sai no domingo)
+
+  # Permite rodar manualmente pelo GitHub → Actions → Run workflow
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Forçar reprocessamento mesmo se já feito hoje"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write   # necessário para o git commit/push dos dados
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # ── 2. Python ────────────────────────────────────────────────────────
+      - name: Configurar Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: scraper/requirements.txt
+
+      - name: Instalar dependências Python
+        run: pip install -r scraper/requirements.txt
+
+      # ── 3. Scraping ──────────────────────────────────────────────────────
+      - name: Executar scraper
+        id: scraper
+        working-directory: scraper
+        run: python main.py
+        env:
+          PYTHONPATH: .
+
+      # ── 4. Commit dos dados ───────────────────────────────────────────────
+      - name: Commit e push dos dados
+        run: |
+          git config user.name  "Diário Oficial Bot"
+          git config user.email "bot@diario-monitor.local"
+          git add data/
+          # Só faz commit se houver mudança
+          git diff --cached --quiet || git commit -m "dados: edição ${{ steps.scraper.outputs.edition_date }} — ${{ steps.scraper.outputs.convocados_count }} convocados"
+          git push
+
+      # ── 5. Deploy GitHub Pages ────────────────────────────────────────────
+      # Copia data/ e config/ para dentro de web/ antes do deploy
+      - name: Preparar assets para deploy
+        run: |
+          cp -r data web/data
+          cp -r config web/config
+
+      - name: Deploy GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./web
+          publish_branch: gh-pages
+          force_orphan: false
+          keep_files: false
+
+      # ── 6. Enviar email (apenas se houver convocados) ─────────────────────
+      - name: Enviar email com convocados
+        if: steps.scraper.outputs.has_convocacoes == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: false
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "📋 Diário Oficial Nova Iguaçu — ${{ steps.scraper.outputs.convocados_count }} convocados em ${{ steps.scraper.outputs.edition_date }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "Diário Oficial Monitor <${{ secrets.EMAIL_USERNAME }}>"
+          html_body: |
+            <html>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+              <div style="background: #1a56db; color: white; padding: 24px; border-radius: 8px 8px 0 0;">
+                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Nova Iguaçu</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.85;">Edição: ${{ steps.scraper.outputs.edition_date }}</p>
+              </div>
+              <div style="background: white; padding: 24px; border-radius: 0 0 8px 8px;">
+                <h2 style="color: #1a56db; margin-top: 0;">
+                  ${{ steps.scraper.outputs.convocados_count }} candidatos convocados hoje
+                </h2>
+                <pre style="background: #f8f9fa; padding: 16px; border-radius: 6px; font-size: 14px; line-height: 1.6;">${{ steps.scraper.outputs.email_summary }}</pre>
+                <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+                   style="display: inline-block; background: #1a56db; color: white; padding: 12px 24px;
+                          border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 16px;">
+                  Ver lista completa →
+                </a>
+                <p style="color: #888; font-size: 12px; margin-top: 24px;">
+                  Gerado automaticamente pelo Diário Oficial Monitor.<br>
+                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br">doweb.novaiguacu.rj.gov.br</a>
+                </p>
+              </div>
+            </body>
+            </html>
+
+      # ── 7. Email quando NÃO há convocados (silencioso) ────────────────────
+      - name: Log quando sem convocados
+        if: steps.scraper.outputs.has_convocacoes == 'false'
+        run: echo "Edição ${{ steps.scraper.outputs.edition_date }} sem convocações. Email não enviado."

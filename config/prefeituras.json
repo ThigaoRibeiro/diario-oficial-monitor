@@ -1,0 +1,71 @@
+[
+  {
+    "id": "nova-iguacu",
+    "nome": "Nova Iguaçu",
+    "estado": "RJ",
+    "tipo": "doweb",
+    "portal_url": "https://doweb.novaiguacu.rj.gov.br",
+    "listing_url": "https://doweb.novaiguacu.rj.gov.br/portal/diario-oficial/2/0/0/0/0",
+    "ativo": true
+  },
+  {
+    "id": "duque-de-caxias",
+    "nome": "Duque de Caxias",
+    "estado": "RJ",
+    "tipo": "doweb",
+    "portal_url": "https://doweb.pmdc.rj.gov.br",
+    "listing_url": "https://doweb.pmdc.rj.gov.br/portal/diario-oficial/2/0/0/0/0",
+    "ativo": false,
+    "observacao": "Verificar URL correta antes de ativar"
+  },
+  {
+    "id": "sao-joao-de-meriti",
+    "nome": "São João de Meriti",
+    "estado": "RJ",
+    "tipo": "generico",
+    "portal_url": "https://diariooficial.sjmeriti.rj.gov.br",
+    "listing_url": "",
+    "ativo": false,
+    "observacao": "Verificar URL correta antes de ativar"
+  },
+  {
+    "id": "nilópolis",
+    "nome": "Nilópolis",
+    "estado": "RJ",
+    "tipo": "generico",
+    "portal_url": "",
+    "listing_url": "",
+    "ativo": false,
+    "observacao": "URL do portal precisa ser configurada"
+  },
+  {
+    "id": "mesquita",
+    "nome": "Mesquita",
+    "estado": "RJ",
+    "tipo": "generico",
+    "portal_url": "",
+    "listing_url": "",
+    "ativo": false,
+    "observacao": "URL do portal precisa ser configurada"
+  },
+  {
+    "id": "queimados",
+    "nome": "Queimados",
+    "estado": "RJ",
+    "tipo": "generico",
+    "portal_url": "",
+    "listing_url": "",
+    "ativo": false,
+    "observacao": "URL do portal precisa ser configurada"
+  },
+  {
+    "id": "japeri",
+    "nome": "Japeri",
+    "estado": "RJ",
+    "tipo": "generico",
+    "portal_url": "",
+    "listing_url": "",
+    "ativo": false,
+    "observacao": "URL do portal precisa ser configurada"
+  }
+]

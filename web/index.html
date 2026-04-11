@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diário Oficial Monitor</title>
+  <meta name="description" content="Monitore convocações em múltiplas prefeituras — busque seu nome de uma vez só." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📋</text></svg>" />
+</head>
+<body>
+
+<!-- ═══════════════════════ HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <span class="header-icon">📋</span>
+      <div>
+        <h1 class="header-title">Diário Oficial Monitor</h1>
+        <p class="header-subtitle" id="header-subtitle">Carregando...</p>
+      </div>
+    </div>
+    <div id="header-watch-badge" class="watch-badge" style="display:none">
+      👁️ Monitorando: <strong id="header-watch-name"></strong>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════ TABS -->
+<nav class="tabs">
+  <button class="tab active" data-tab="hoje">📅 Hoje</button>
+  <button class="tab" data-tab="meu-nome">🔎 Meu Nome</button>
+  <button class="tab" data-tab="config">⚙️ Configurações</button>
+</nav>
+
+<!-- ═══════════════════════ MAIN -->
+<main class="main">
+
+  <!-- ══════════════════════════════════════════
+       ABA: HOJE
+  ══════════════════════════════════════════ -->
+  <section id="tab-hoje" class="tab-content active">
+
+    <!-- Seletor de data -->
+    <div class="date-nav">
+      <button class="btn-nav" id="btn-prev">&#8592;</button>
+      <div class="date-display" id="date-display">—</div>
+      <button class="btn-nav" id="btn-next">&#8594;</button>
+    </div>
+
+    <!-- Filtro de prefeitura -->
+    <div class="pref-filter" id="pref-filter"></div>
+
+    <!-- Busca rápida inline -->
+    <div class="search-bar">
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="today-search" class="search-input"
+               placeholder="Filtrar por nome ou cargo..." autocomplete="off" />
+        <button class="search-clear" id="today-search-clear">✕</button>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats" id="stats-bar">
+      <div class="stat-card">
+        <span class="stat-number" id="stat-count">—</span>
+        <span class="stat-label">Convocados</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" id="stat-prefs">—</span>
+        <span class="stat-label">Prefeituras</span>
+      </div>
+      <div class="stat-card" id="stat-pdf-card" style="display:none">
+        <a id="stat-pdf-link" href="#" target="_blank" class="stat-pdf-btn">📄 Ver PDF</a>
+        <span class="stat-label">Diário Oficial</span>
+      </div>
+    </div>
+
+    <!-- Conteúdo -->
+    <div id="hoje-loading"  class="loading-state"><div class="spinner"></div><p>Carregando...</p></div>
+    <div id="hoje-empty"    class="empty-state"   style="display:none">
+      <div class="empty-icon">📭</div>
+      <h2>Sem convocações hoje</h2>
+      <p>O Diário Oficial desta data não contém convocações.</p>
+    </div>
+    <div id="hoje-nores"    class="empty-state"   style="display:none">
+      <div class="empty-icon">🔎</div><h2>Nenhum resultado</h2>
+      <p>Tente outro nome ou cargo.</p>
+    </div>
+    <div id="hoje-cards"    class="cards-grid"    style="display:none"></div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       ABA: MEU NOME
+  ══════════════════════════════════════════ -->
+  <section id="tab-meu-nome" class="tab-content" style="display:none">
+
+    <div class="name-search-box">
+      <h2 class="section-title">🔎 Buscar meu nome em todas as prefeituras</h2>
+      <p class="section-desc">
+        Digite seu nome completo ou parcial e veja se você foi convocado em qualquer uma das prefeituras monitoradas.
+      </p>
+      <div class="search-wrapper big">
+        <span class="search-icon">👤</span>
+        <input type="text" id="name-input" class="search-input big"
+               placeholder="Ex: JOÃO SILVA ou apenas SILVA..."
+               autocomplete="off" spellcheck="false" />
+        <button class="btn-search" id="btn-name-search">Buscar</button>
+      </div>
+      <label class="checkbox-row">
+        <input type="checkbox" id="watch-toggle" />
+        <span>Salvar nome e monitorar automaticamente</span>
+      </label>
+    </div>
+
+    <div id="name-results-header" style="display:none" class="results-header">
+      <span id="name-results-count"></span>
+      <span class="results-hint">Resultados encontrados no histórico completo</span>
+    </div>
+
+    <div id="name-loading"  class="loading-state" style="display:none"><div class="spinner"></div><p>Buscando...</p></div>
+    <div id="name-empty"    class="empty-state"   style="display:none">
+      <div class="empty-icon">🎉</div>
+      <h2>Nenhuma convocação encontrada</h2>
+      <p>Seu nome não aparece no histórico de nenhuma das prefeituras monitoradas até o momento.</p>
+    </div>
+    <div id="name-cards" class="cards-grid" style="display:none"></div>
+
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       ABA: CONFIGURAÇÕES
+  ══════════════════════════════════════════ -->
+  <section id="tab-config" class="tab-content" style="display:none">
+
+    <!-- Meu nome monitorado -->
+    <div class="config-card">
+      <h2 class="config-section-title">👤 Meu Nome</h2>
+      <p class="config-desc">O nome salvo é usado para alertas automáticos por email e busca rápida.</p>
+      <div class="config-row">
+        <input type="text" id="config-name" class="config-input"
+               placeholder="Seu nome completo em maiúsculas" autocomplete="name" />
+        <button class="btn-save" id="btn-save-name">Salvar</button>
+      </div>
+      <p class="config-saved" id="name-saved-msg" style="display:none">✅ Nome salvo!</p>
+    </div>
+
+    <!-- Prefeituras disponíveis -->
+    <div class="config-card">
+      <h2 class="config-section-title">🏛️ Prefeituras Monitoradas</h2>
+      <p class="config-desc">
+        Selecione as prefeituras onde você prestou concurso.
+        As marcadas serão incluídas na busca "Meu Nome".
+      </p>
+      <div id="pref-list" class="pref-list"></div>
+    </div>
+
+    <!-- Adicionar prefeitura por estado/cidade -->
+    <div class="config-card">
+      <h2 class="config-section-title">➕ Adicionar Prefeitura</h2>
+      <p class="config-desc">
+        Selecione o estado e a cidade onde você fez concurso.
+        A prefeitura será adicionada à sua lista de monitoramento.
+      </p>
+
+      <!-- Seletor de Estado -->
+      <div class="ibge-form">
+        <div class="ibge-row">
+          <div class="ibge-field">
+            <label class="ibge-label" for="select-estado">Estado</label>
+            <div class="select-wrapper">
+              <select id="select-estado" class="ibge-select">
+                <option value="">Selecione o estado...</option>
+              </select>
+            </div>
+          </div>
+          <div class="ibge-field">
+            <label class="ibge-label" for="select-cidade">Cidade</label>
+            <div class="select-wrapper">
+              <select id="select-cidade" class="ibge-select" disabled>
+                <option value="">Selecione o estado primeiro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- URL do portal (opcional) -->
+        <div class="ibge-field" id="portal-url-field" style="display:none">
+          <label class="ibge-label" for="input-portal-url">
+            URL do Portal do Diário Oficial
+            <span class="label-hint">(opcional — para pesquisa futura)</span>
+          </label>
+          <input type="url" id="input-portal-url" class="config-input full"
+                 placeholder="https://diario.prefeitura.gov.br" />
+        </div>
+
+        <!-- Info da cidade selecionada -->
+        <div id="city-status" class="city-status" style="display:none"></div>
+
+        <button class="btn-add-pref" id="btn-add-pref" disabled>
+          ➕ Adicionar à minha lista
+        </button>
+      </div>
+    </div>
+
+    <!-- Minhas prefeituras salvas (localStorage) -->
+    <div class="config-card" id="my-prefs-card" style="display:none">
+      <h2 class="config-section-title">📌 Minhas Prefeituras Salvas</h2>
+      <p class="config-desc">Prefeituras que você adicionou manualmente para monitorar.</p>
+      <div id="my-prefs-list" class="pref-list"></div>
+    </div>
+
+    <!-- Limpar dados locais -->
+    <div class="config-card danger-card">
+      <h2 class="config-section-title">🗑️ Dados Locais</h2>
+      <p class="config-desc">Remove o nome salvo e as preferências armazenadas neste navegador.</p>
+      <button class="btn-danger" id="btn-clear-local">Limpar dados do navegador</button>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- ═══════════════════════ FOOTER -->
+<footer class="footer">
+  <p>
+    Fontes: <a href="https://doweb.novaiguacu.rj.gov.br" target="_blank" rel="noopener">Nova Iguaçu</a>
+    &nbsp;·&nbsp; Atualizado automaticamente em dias úteis às 08h BRT
+    &nbsp;·&nbsp; <a href="https://github.com" target="_blank" rel="noopener">Código no GitHub</a>
+  </p>
+  <p class="footer-disclaimer">
+    Dados extraídos automaticamente — sempre confirme na fonte oficial.
+  </p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
