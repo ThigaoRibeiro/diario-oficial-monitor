@@ -115,7 +115,6 @@ def process_prefeitura(pref: dict) -> dict:
     except Exception as e:
         log.error("[%s] Falha no parse: %s", pid, e)
         result["error"] = str(e)
-        pdf_path.unlink(missing_ok=True)
         return result
 
     # Extrai convocados
@@ -152,8 +151,7 @@ def process_prefeitura(pref: dict) -> dict:
     })
     save_prefeitura_index(pid, idx)
 
-    # Limpa PDF temporário
-    pdf_path.unlink(missing_ok=True)
+    # O PDF é mantido em tmp/ para ser enviado como anexo no email
 
     result.update({"date": iso_date, "edition_id": meta["edition_id"], "convocados": convocados})
     return result
