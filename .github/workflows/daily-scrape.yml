@@ -1,9 +1,13 @@
 name: Diário Oficial — Scrape Diário
 
 on:
-  # Roda todo dia às 08:00 horário de Brasília (11:00 UTC)
+  # Roda 2x por dia no horário de Brasília (BRT = UTC-3)
+  # 09:00 BRT = 12:00 UTC
+  # 20:00 BRT = 23:00 UTC
+  # Seg–Sáb (diário oficial não sai no domingo)
   schedule:
-    - cron: "0 11 * * 1-6"   # seg–sáb (diário oficial não sai no domingo)
+    - cron: "0 12 * * 1-6"   # 09:00 BRT
+    - cron: "0 23 * * 1-6"   # 20:00 BRT
 
   # Permite rodar manualmente pelo GitHub → Actions → Run workflow
   workflow_dispatch:
@@ -19,14 +23,14 @@ permissions:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
 
     steps:
       # ── 1. Checkout ──────────────────────────────────────────────────────
       - name: Checkout do repositório
         uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0   # histórico completo para push funcionar corretamente
 
       # ── 2. Python ────────────────────────────────────────────────────────
       - name: Configurar Python 3.12
@@ -45,7 +49,7 @@ jobs:
         working-directory: scraper
         run: python main.py
         env:
-          PYTHONPATH: .
+          FORCE_REPROCESS: ${{ github.event.inputs.force }}
 
       # ── 4. Commit dos dados ───────────────────────────────────────────────
       - name: Commit e push dos dados
@@ -54,15 +58,20 @@ jobs:
           git config user.email "bot@diario-monitor.local"
           git add data/
           # Só faz commit se houver mudança
-          git diff --cached --quiet || git commit -m "dados: edição ${{ steps.scraper.outputs.edition_date }} — ${{ steps.scraper.outputs.convocados_count }} convocados"
-          git push
+          if ! git diff --cached --quiet; then
+            git commit -m "dados: ${{ steps.scraper.outputs.edition_date }} — ${{ steps.scraper.outputs.convocados_count }} convocados"
+            git push
+          else
+            echo "Nenhuma mudança nos dados, pulando commit."
+          fi
 
       # ── 5. Deploy GitHub Pages ────────────────────────────────────────────
       # Copia data/ e config/ para dentro de web/ antes do deploy
       - name: Preparar assets para deploy
         run: |
-          cp -r data web/data
-          cp -r config web/config
+          mkdir -p web/data web/config
+          cp -r data/. web/data/
+          cp -r config/. web/config/
 
       - name: Deploy GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -71,10 +80,10 @@ jobs:
           publish_dir: ./web
           publish_branch: gh-pages
           force_orphan: false
-          keep_files: false
+          keep_files: true   # preserva arquivos anteriores no gh-pages
 
-      # ── 6. Enviar email (apenas se houver convocados) ─────────────────────
-      - name: Enviar email com convocados
+      # ── 6. Enviar email — SEMPRE (com ou sem convocados) ──────────────────
+      - name: Enviar email — com convocados
         if: steps.scraper.outputs.has_convocacoes == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
@@ -83,35 +92,70 @@ jobs:
           secure: false
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: "📋 Diário Oficial Nova Iguaçu — ${{ steps.scraper.outputs.convocados_count }} convocados em ${{ steps.scraper.outputs.edition_date }}"
+          subject: "🔔 Diário Oficial — ${{ steps.scraper.outputs.convocados_count }} convocados em ${{ steps.scraper.outputs.edition_date }}"
           to: ${{ secrets.EMAIL_TO }}
           from: "Diário Oficial Monitor <${{ secrets.EMAIL_USERNAME }}>"
           html_body: |
             <html>
-            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
-              <div style="background: #1a56db; color: white; padding: 24px; border-radius: 8px 8px 0 0;">
-                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Nova Iguaçu</h1>
-                <p style="margin: 8px 0 0 0; opacity: 0.85;">Edição: ${{ steps.scraper.outputs.edition_date }}</p>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f0f4ff;">
+              <div style="background: linear-gradient(135deg, #1a56db, #0e3a9e); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0;">
+                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Monitor</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.85; font-size: 15px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
               </div>
-              <div style="background: white; padding: 24px; border-radius: 0 0 8px 8px;">
-                <h2 style="color: #1a56db; margin-top: 0;">
-                  ${{ steps.scraper.outputs.convocados_count }} candidatos convocados hoje
-                </h2>
-                <pre style="background: #f8f9fa; padding: 16px; border-radius: 6px; font-size: 14px; line-height: 1.6;">${{ steps.scraper.outputs.email_summary }}</pre>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="background: #e8f0fe; border-left: 4px solid #1a56db; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #1a56db; font-size: 18px;">✅ ${{ steps.scraper.outputs.convocados_count }} candidato(s) convocado(s)</strong>
+                </div>
+                <h3 style="color: #333; margin-top: 0;">Resumo por prefeitura:</h3>
+                <pre style="background: #f8f9fa; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; white-space: pre-wrap; border: 1px solid #e0e0e0;">${{ steps.scraper.outputs.email_summary }}</pre>
                 <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-                   style="display: inline-block; background: #1a56db; color: white; padding: 12px 24px;
-                          border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 16px;">
-                  Ver lista completa →
+                   style="display: inline-block; background: linear-gradient(135deg, #1a56db, #0e3a9e); color: white; padding: 14px 28px;
+                          border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 15px;">
+                  🔗 Ver lista completa no site →
                 </a>
-                <p style="color: #888; font-size: 12px; margin-top: 24px;">
-                  Gerado automaticamente pelo Diário Oficial Monitor.<br>
-                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br">doweb.novaiguacu.rj.gov.br</a>
+                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px;">
+                  Monitoramento automático · Atualiza às 09h e 20h (BRT)<br>
+                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br" style="color: #1a56db;">doweb.novaiguacu.rj.gov.br</a>
                 </p>
               </div>
             </body>
             </html>
 
-      # ── 7. Email quando NÃO há convocados (silencioso) ────────────────────
-      - name: Log quando sem convocados
+      - name: Enviar email — sem convocados (boletim diário)
         if: steps.scraper.outputs.has_convocacoes == 'false'
-        run: echo "Edição ${{ steps.scraper.outputs.edition_date }} sem convocações. Email não enviado."
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: false
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "📭 Diário Oficial ${{ steps.scraper.outputs.edition_date }} — sem convocações"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "Diário Oficial Monitor <${{ secrets.EMAIL_USERNAME }}>"
+          html_body: |
+            <html>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+              <div style="background: #607d8b; color: white; padding: 28px 24px; border-radius: 12px 12px 0 0;">
+                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Monitor</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.85; font-size: 15px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
+              </div>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <div style="background: #f5f5f5; border-left: 4px solid #90a4ae; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #546e7a; font-size: 16px;">📭 Nenhuma convocação encontrada nesta edição</strong>
+                </div>
+                <p style="color: #555; line-height: 1.6;">
+                  O Diário Oficial de ${{ steps.scraper.outputs.edition_date }} foi verificado em
+                  <strong>${{ steps.scraper.outputs.prefeituras_count }}</strong> prefeitura(s) e não contém convocações no momento.
+                </p>
+                <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+                   style="display: inline-block; background: #546e7a; color: white; padding: 12px 24px;
+                          border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 12px; font-size: 14px;">
+                  🔗 Acessar o site →
+                </a>
+                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px;">
+                  Monitoramento automático · Atualiza às 09h e 20h (BRT)
+                </p>
+              </div>
+            </body>
+            </html>

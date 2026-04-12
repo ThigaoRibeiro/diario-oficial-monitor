@@ -11,15 +11,22 @@ from pathlib import Path
 
 log = logging.getLogger(__name__)
 
-# Palavras-chave que indicam seções de convocação/aprovação
+# Palavras-chave que indicam seções de convocação/aprovação em concurso público
 SECTION_KEYWORDS = [
-    r"CONVOCA[ÇC][ÃA]O",
+    r"CONVOCA[\xc7C][\xc3A]O",          # CONVOCAÇÃO
     r"CONVOCADOS?",
     r"APROVADOS?\s+E\s+CONVOCADOS?",
     r"LISTA\s+DE\s+APROVADOS?",
-    r"RESULTADO\s+FINAL",
-    r"HOMOLOGA[ÇC][ÃA]O",
+    r"RESULTADO\s+FINAL\s+DO\s+CONCURSO",
+    r"RESULTADO\s+FINAL\s+DO\s+PROCESSO\s+SELETIVO",
+    r"CHAMAMENTO\s+P[\xdaU]BLICO.*CONVOCA",  # chamamento que CONVOCA (raro)
 ]
+
+# Palavras que indicam que a seção NÃO é de convocação de concurso
+FALSE_POSITIVE_KEYWORDS = re.compile(
+    r"CHAMAMENTO\s+P[\xdaU]BLICO|AGENTES\s+CULTURAIS|CADASTRAMENTO|INSCRI[\xc7C][\xd5O][\xd5O]ES|RESULTADO\s+PRELIMINAR",
+    re.IGNORECASE | re.UNICODE,
+)
 
 SECTION_PATTERN = re.compile(
     "|".join(SECTION_KEYWORDS),
@@ -97,8 +104,19 @@ def find_relevant_sections(full_text: str) -> list[dict]:
             "content": "\n".join(current_lines).strip(),
         })
 
-    log.info("Seções relevantes encontradas: %d", len(sections))
-    return sections
+    log.info("Seções relevantes brutas: %d", len(sections))
+
+    # Filtra falsos positivos (chamamentos culturais, inscrições, etc.)
+    filtered = []
+    for s in sections:
+        combined = s["title"] + " " + s["content"][:500]
+        if FALSE_POSITIVE_KEYWORDS.search(combined):
+            log.info("Seção ignorada (falso positivo): %s", s["title"][:80])
+            continue
+        filtered.append(s)
+
+    log.info("Seções relevantes após filtro: %d", len(filtered))
+    return filtered
 
 
 def parse_pdf(pdf_path: Path) -> dict:

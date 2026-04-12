@@ -9,12 +9,12 @@ Monitora diariamente o [Diário Oficial da Prefeitura de Nova Iguaçu](https://d
 ## Como funciona
 
 ```
-Todo dia útil às 08h (BRT)
+Todo dia útil às 09h e às 20h (BRT)
   └─> GitHub Actions baixa o PDF do Diário Oficial
   └─> Python extrai os candidatos convocados
   └─> Dados salvos como JSON no próprio repositório
   └─> Site GitHub Pages atualizado automaticamente
-  └─> Email enviado se houver convocações
+  └─> Email enviado sempre (com ou sem convocações)
 ```
 
 ---
@@ -55,7 +55,7 @@ Acesse **Settings → Secrets and variables → Actions → New repository secre
 |--------|-------|
 | `EMAIL_USERNAME` | seu-email@gmail.com |
 | `EMAIL_PASSWORD` | Senha de App do Gmail (veja abaixo) |
-| `EMAIL_TO` | email-destino@gmail.com |
+| `EMAIL_TO` | Um ou mais emails separados por vírgula: `email1@gmail.com, celular@gmail.com` |
 
 > **Como gerar a Senha de App do Gmail:**
 > 1. Acesse [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
@@ -99,12 +99,16 @@ diario-oficial-monitor/
 ## Agendamento
 
 O scraper roda automaticamente:
-- **Segunda a Sábado às 08:00 BRT** (11:00 UTC)
+- **Seg–Sáb às 09:00 BRT** (12:00 UTC) — verificação matinal
+- **Seg–Sáb às 20:00 BRT** (23:00 UTC) — verificação noturna
 - O Diário Oficial de Nova Iguaçu não é publicado aos domingos
+
+O email é enviado **sempre** — com convocados (alerta 🔔) ou sem (boletim 📭).
 
 Para alterar o horário, edite `.github/workflows/daily-scrape.yml`:
 ```yaml
-- cron: "0 11 * * 1-6"   # 11:00 UTC = 08:00 BRT
+- cron: "0 12 * * 1-6"   # 12:00 UTC = 09:00 BRT
+- cron: "0 23 * * 1-6"   # 23:00 UTC = 20:00 BRT
 ```
 
 ---
@@ -126,8 +130,8 @@ Para alterar o horário, edite `.github/workflows/daily-scrape.yml`:
 ## Limites gratuitos do GitHub Actions
 
 - **2.000 minutos/mês** para repositórios privados
-- Cada execução leva ~2 minutos → **~30 dias de uso contínuo** dentro do limite
-- Para repositórios **públicos**: minutos ilimitados
+- Cada execução leva ~2 minutos × 2x/dia = ~4 min/dia → **~500 execuções/mês** dentro do limite
+- Para repositórios **públicos**: minutos ilimitados ✅
 
 ---
 

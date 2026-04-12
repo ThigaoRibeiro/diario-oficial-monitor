@@ -14,6 +14,7 @@ import json
 import logging
 import os
 import sys
+from datetime import date
 from pathlib import Path
 
 from fetcher import fetch_prefeitura
@@ -94,16 +95,19 @@ def process_prefeitura(pref: dict) -> dict:
     iso_date = meta["date"]
     pdf_path = Path(meta["pdf_local"])
 
-    # Verifica se já processamos hoje
+    # Verifica se já processamos hoje (pode ser ignorado via FORCE_REPROCESS)
     output_path = DATA_DIR / pid / f"{iso_date}.json"
-    if output_path.exists():
-        log.info("[%s] Edição %s já processada.", pid, iso_date)
+    force = os.environ.get("FORCE_REPROCESS", "false").lower() == "true"
+    if output_path.exists() and not force:
+        log.info("[%s] Edição %s já processada. Use FORCE_REPROCESS=true para reprocessar.", pid, iso_date)
         existing = json.loads(output_path.read_text(encoding="utf-8"))
         result["convocados"] = existing.get("convocados", [])
         result["skipped"]    = True
         result["date"]       = iso_date
         result["edition_id"] = meta["edition_id"]
         return result
+    elif output_path.exists() and force:
+        log.info("[%s] Reprocessando edição %s (FORCE_REPROCESS=true).", pid, iso_date)
 
     # Extrai texto
     try:
@@ -203,10 +207,12 @@ def run() -> None:
 
     # Outputs para GitHub Actions
     total = len(total_convocados)
+    today_str = date.today().strftime("%d/%m/%Y")
     set_output("convocados_count",  str(total))
     set_output("has_convocacoes",   "true" if total > 0 else "false")
-    set_output("email_summary",     "\n".join(summary_lines).replace("\n", "%0A"))
+    set_output("email_summary",     "\n".join(summary_lines))
     set_output("prefeituras_count", str(len(active)))
+    set_output("edition_date",      today_str)   # usado no subject/commit do workflow
 
     log.info("=== Concluído: %d convocados em %d prefeitura(s) ===", total, len(active))
 
