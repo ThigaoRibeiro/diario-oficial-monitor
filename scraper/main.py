@@ -13,11 +13,11 @@ Para cada prefeitura ativa em config/prefeituras.json:
 import json
 import logging
 import os
+import re
 import sys
 from datetime import date
 from html import escape
 from pathlib import Path
-from uuid import uuid4
 
 from fetcher import fetch_prefeitura
 from parser import parse_pdf
@@ -72,22 +72,28 @@ def rebuild_global_index(prefeituras: list[dict]) -> None:
 
 # ── GitHub Actions outputs ────────────────────────────────────
 
+# Regex que captura QUALQUER tipo de quebra de linha, incluindo Unicode.
+_LINE_BREAK_RE = re.compile(r"[\r\n\x0b\x0c\x85\u2028\u2029]+")
+
+
+def _sanitize_output(text: str) -> str:
+    """Remove toda quebra de linha e espaço excessivo — garante valor de uma linha."""
+    return " ".join(_LINE_BREAK_RE.sub(" ", str(text)).split())
+
+
 def set_output(key: str, value: str) -> None:
+    # Sempre sanitiza para evitar quebra de formato no GITHUB_OUTPUT.
+    safe_value = _sanitize_output(value)
     f = os.environ.get("GITHUB_OUTPUT")
     if f:
         with open(f, "a", encoding="utf-8") as fh:
-            if "\n" in value:
-                # Usa delimitador dinâmico para evitar colisão com o conteúdo.
-                delimiter = f"EOF_{uuid4().hex}"
-                fh.write(f"{key}<<{delimiter}\n{value}\n{delimiter}\n")
-            else:
-                fh.write(f"{key}={value}\n")
-    log.info("OUTPUT %s=%s", key, value)
+            fh.write(f"{key}={safe_value}\n")
+    log.info("OUTPUT %s=%s", key, safe_value)
 
 
 def single_line(text: str) -> str:
     """Normaliza texto para uma única linha (evita quebrar GITHUB_OUTPUT)."""
-    return " ".join(str(text).split())
+    return _sanitize_output(text)
 
 
 # ── Pipeline por prefeitura ───────────────────────────────────
@@ -215,7 +221,7 @@ def run() -> None:
             nomes = [c["nome"] for c in r["convocados"][:5]]
             for n in nomes:
                 n_clean = single_line(n)
-                summary_lines.append(f"   • {n_clean}")
+                summary_lines.append(f"   - {n_clean}")
                 summary_html.append(
                     f"<div style=\"padding-left: 16px;\">&bull; {escape(n_clean)}</div>"
                 )
@@ -236,7 +242,7 @@ def run() -> None:
     today_str = date.today().strftime("%d/%m/%Y")
     set_output("convocados_count",  str(total))
     set_output("has_convocacoes",   "true" if total > 0 else "false")
-    set_output("email_summary",     single_line(" | ".join(summary_lines)))
+    set_output("email_summary",     " | ".join(summary_lines))
     set_output("email_summary_html", "".join(summary_html))
     set_output("prefeituras_count", str(len(active)))
     set_output("edition_date",      today_str)   # usado no subject/commit do workflow
