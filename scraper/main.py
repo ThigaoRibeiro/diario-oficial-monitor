@@ -236,7 +236,7 @@ def run() -> None:
     today_str = date.today().strftime("%d/%m/%Y")
     set_output("convocados_count",  str(total))
     set_output("has_convocacoes",   "true" if total > 0 else "false")
-    set_output("email_summary",     " | ".join(summary_lines))
+    set_output("email_summary",     single_line(" | ".join(summary_lines)))
     set_output("email_summary_html", "".join(summary_html))
     set_output("prefeituras_count", str(len(active)))
     set_output("edition_date",      today_str)   # usado no subject/commit do workflow
