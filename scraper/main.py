@@ -15,6 +15,7 @@ import logging
 import os
 import sys
 from datetime import date
+from html import escape
 from pathlib import Path
 from uuid import uuid4
 
@@ -186,11 +187,15 @@ def run() -> None:
 
     total_convocados = []
     summary_lines    = []
+    summary_html     = []
 
     for pref in active:
         r = process_prefeitura(pref)
         if r.get("error"):
             summary_lines.append(f"❌ {pref['nome']}: Erro — {r['error']}")
+            summary_html.append(
+                f"<div><strong>❌ {escape(pref['nome'])}</strong>: Erro — {escape(r['error'])}</div>"
+            )
             continue
 
         count = len(r.get("convocados", []))
@@ -198,13 +203,23 @@ def run() -> None:
 
         if count > 0:
             summary_lines.append(f"✅ {pref['nome']} — {count} convocado(s)")
+            summary_html.append(
+                f"<div><strong>✅ {escape(pref['nome'])} — {count} convocado(s)</strong></div>"
+            )
             nomes = [c["nome"] for c in r["convocados"][:5]]
             for n in nomes:
                 summary_lines.append(f"   • {n}")
+                summary_html.append(
+                    f"<div style=\"padding-left: 16px;\">&bull; {escape(n)}</div>"
+                )
             if count > 5:
                 summary_lines.append(f"   ... e mais {count - 5}")
+                summary_html.append(
+                    f"<div style=\"padding-left: 16px;\">... e mais {count - 5}</div>"
+                )
         else:
             summary_lines.append(f"📭 {pref['nome']} — sem convocações")
+            summary_html.append(f"<div>📭 {escape(pref['nome'])} — sem convocações</div>")
 
     # Reconstrói índice global
     rebuild_global_index(active)
@@ -214,7 +229,8 @@ def run() -> None:
     today_str = date.today().strftime("%d/%m/%Y")
     set_output("convocados_count",  str(total))
     set_output("has_convocacoes",   "true" if total > 0 else "false")
-    set_output("email_summary",     "\n".join(summary_lines))
+    set_output("email_summary",     " | ".join(summary_lines))
+    set_output("email_summary_html", "".join(summary_html))
     set_output("prefeituras_count", str(len(active)))
     set_output("edition_date",      today_str)   # usado no subject/commit do workflow
 
