@@ -85,6 +85,11 @@ def set_output(key: str, value: str) -> None:
     log.info("OUTPUT %s=%s", key, value)
 
 
+def single_line(text: str) -> str:
+    """Normaliza texto para uma única linha (evita quebrar GITHUB_OUTPUT)."""
+    return " ".join(str(text).split())
+
+
 # ── Pipeline por prefeitura ───────────────────────────────────
 
 def process_prefeitura(pref: dict) -> dict:
@@ -192,9 +197,10 @@ def run() -> None:
     for pref in active:
         r = process_prefeitura(pref)
         if r.get("error"):
-            summary_lines.append(f"❌ {pref['nome']}: Erro — {r['error']}")
+            error_msg = single_line(r["error"])
+            summary_lines.append(f"❌ {pref['nome']}: Erro — {error_msg}")
             summary_html.append(
-                f"<div><strong>❌ {escape(pref['nome'])}</strong>: Erro — {escape(r['error'])}</div>"
+                f"<div><strong>❌ {escape(pref['nome'])}</strong>: Erro — {escape(error_msg)}</div>"
             )
             continue
 
@@ -208,9 +214,10 @@ def run() -> None:
             )
             nomes = [c["nome"] for c in r["convocados"][:5]]
             for n in nomes:
-                summary_lines.append(f"   • {n}")
+                n_clean = single_line(n)
+                summary_lines.append(f"   • {n_clean}")
                 summary_html.append(
-                    f"<div style=\"padding-left: 16px;\">&bull; {escape(n)}</div>"
+                    f"<div style=\"padding-left: 16px;\">&bull; {escape(n_clean)}</div>"
                 )
             if count > 5:
                 summary_lines.append(f"   ... e mais {count - 5}")
