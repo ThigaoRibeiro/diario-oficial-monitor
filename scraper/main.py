@@ -16,6 +16,7 @@ import os
 import sys
 from datetime import date
 from pathlib import Path
+from uuid import uuid4
 
 from fetcher import fetch_prefeitura
 from parser import parse_pdf
@@ -74,7 +75,12 @@ def set_output(key: str, value: str) -> None:
     f = os.environ.get("GITHUB_OUTPUT")
     if f:
         with open(f, "a", encoding="utf-8") as fh:
-            fh.write(f"{key}={value}\n")
+            if "\n" in value:
+                # Usa delimitador dinâmico para evitar colisão com o conteúdo.
+                delimiter = f"EOF_{uuid4().hex}"
+                fh.write(f"{key}<<{delimiter}\n{value}\n{delimiter}\n")
+            else:
+                fh.write(f"{key}={value}\n")
     log.info("OUTPUT %s=%s", key, value)
 
 

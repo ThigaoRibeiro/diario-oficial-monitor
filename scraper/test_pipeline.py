@@ -141,11 +141,24 @@ def run_full_pipeline():
         main.run()
         log.info("\n── Outputs capturados ─────────────────────────")
         outputs = {}
-        for line in Path(tmp_output).read_text(encoding="utf-8").splitlines():
-            if "=" in line:
+        lines = Path(tmp_output).read_text(encoding="utf-8").splitlines()
+        i = 0
+        while i < len(lines):
+            line = lines[i]
+            if "<<" in line:
+                k, delimiter = line.split("<<", 1)
+                i += 1
+                value_lines = []
+                while i < len(lines) and lines[i] != delimiter:
+                    value_lines.append(lines[i])
+                    i += 1
+                outputs[k] = "\n".join(value_lines)
+                log.info("   %s = %s", k, outputs[k][:200])
+            elif "=" in line:
                 k, v = line.split("=", 1)
                 outputs[k] = v
                 log.info("   %s = %s", k, v[:200])
+            i += 1
         log.info("✅ Pipeline completo OK")
     finally:
         Path(tmp_output).unlink(missing_ok=True)
