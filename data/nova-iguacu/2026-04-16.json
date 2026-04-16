@@ -1,0 +1,25 @@
+{
+  "date": "2026-04-16",
+  "date_display": "16/04/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2256,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_16-04-2026_-_quinta-feira_15071553.pdf",
+  "convocados_count": 1,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "MESTRES INDICANDO O",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": null,
+      "local": "DA SOCIEDADE 02",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "CONVOCAÇÃO SUPLEMENTAR PARA ASSEMBLEIA DE ELEIÇÃO DE"
+  ]
+}
