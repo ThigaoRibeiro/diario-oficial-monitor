@@ -1,0 +1,341 @@
+{
+  "date": "2026-04-22",
+  "date_display": "22/04/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2260,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_22-04-2026_-_quarta-feira_20072332.pdf",
+  "convocados_count": 35,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "POLÍTICA NACIONAL ALDIR BLANC DE FOMENTO À CULTURA",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura de Nova Iguaçu (SEMCULT) torna público o presente edital.",
+      "observacao": null
+    },
+    {
+      "nome": "INFORMAÇÕES GERAIS",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura de Nova Iguaçu (SEMCULT) torna público o presente edital.",
+      "observacao": null
+    },
+    {
+      "nome": "DAS INSCRIÇÕES",
+      "cargo": "Não especificado",
+      "classificacao": 5,
+      "edital": null,
+      "prazo": null,
+      "local": "eletrônico: CLIQUE AQUI.",
+      "observacao": null
+    },
+    {
+      "nome": "DA ACESSIBILIDADE",
+      "cargo": "Não especificado",
+      "classificacao": 7,
+      "edital": null,
+      "prazo": null,
+      "local": "eletrônico: CLIQUE AQUI.",
+      "observacao": null
+    },
+    {
+      "nome": "DA ETAPA DE SELEÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 8,
+      "edital": null,
+      "prazo": null,
+      "local": "eletrônico: CLIQUE AQUI.",
+      "observacao": null
+    },
+    {
+      "nome": "REMANEJAMENTO DE VAGAS",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": null,
+      "prazo": null,
+      "local": "eletrônico",
+      "observacao": null
+    },
+    {
+      "nome": "DA HABILITAÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 10,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura de Nova Iguaçu.",
+      "observacao": null
+    },
+    {
+      "nome": "DA ETAPA DE PRESTAÇÃO DE CONTAS",
+      "cargo": "Não especificado",
+      "classificacao": 14,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura de Nova Iguaçu, contendo o prazo mínimo de 12 (doze) meses",
+      "observacao": null
+    },
+    {
+      "nome": "CATEGORIA DE INSCRIÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "DADOS DO AGENTE CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "DADOS DO PROJETO CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "RECURSOS FINANCEIROS COMPLEMENTARES",
+      "cargo": "Não especificado",
+      "classificacao": 8,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PLANILHA ORÇAMENTÁRIA",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "RECURSOS FINANCEIROS",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "APLICAÇÃO DOS RECURSOS",
+      "cargo": "Não especificado",
+      "classificacao": 5,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PRESTAÇÃO DE CONTAS",
+      "cargo": "Não especificado",
+      "classificacao": 7,
+      "edital": null,
+      "prazo": "28/04/2026",
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "ALTERAÇÃO DO TERMO DE EXECUÇÃO CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 8,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "TITULARIDADE DE BENS",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "EXTINÇÃO DO TERMO DE EXECUÇÃO CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 10,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "MONITORAMENTO E CONTROLE DE RESULTADOS",
+      "cargo": "Não especificado",
+      "classificacao": 11,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "RESULTADOS DO PROJETO",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "LOCAIS DE REALIZAÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PRODUTOS CULTURAIS GERADOS",
+      "cargo": "Não especificado",
+      "classificacao": 5,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "EQUIPE DO PROJETO",
+      "cargo": "Não especificado",
+      "classificacao": 7,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "DIVULGAÇÃO DO PROJETO",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "TÓPICOS ADICIONAIS",
+      "cargo": "Não especificado",
+      "classificacao": 11,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "INTERNAS DUAS FOLHAS COM",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "LEGENDA UN",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PORCELANTO ACETINADO RETIFICADO NO MODELO",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "CONCRETO POLIDO",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PINTURA DE PAREDES INTERNAS EM TINTA ACRÍLICA SHERWIN",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PINTURA DE PAREDES EXTERNAS EM TINTA ACRÍLICA SHERWIN",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "WILLIAMS DA LINHA KENTONE NA COR BIANCO SERENO",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "TQ TUBO DE QUEDA",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    },
+    {
+      "nome": "PÓS PRODUÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "Tornar público a convocação dos candidatos habilitados em cadastro de re-",
+    "lhe confere a legislação em vigor, Os candidatos CONVOCADOS deverão comparecer à SECRETARIA MU-",
+    "resultado final da seleção publicado no Diário Oficial do Município. O proponente selecionado será convocado para apresentar documentos de",
+    "c) Habilitação – etapa em que os proponentes selecionados na etapa anterior serão convocados para apresentar documentos de habilitação;",
+    "d) Assinatura do Termo de Execução Cultural – etapa em que os proponentes habilitados serão convocados para assinar o Termo de Execução",
+    "8.1.8 Em caso de eventual desistência ou impedimentos do projeto selecionado, será convocado o suplente subsequente imediato, respeitando a ordem",
+    "b) Em caso de eventual desistência ou impedimento do proponente selecionado, será convocado o suplente subsequente imediato, respeitando a ordem",
+    "10.10 Na hipótese de inabilitação de contemplados, serão convocados os proponentes suplentes para apresentarem os documentos de habilitação,",
+    "eliminado deste Edital, e o suplente subsequente será convocado(a) para a fase de habilitação, sendo estabelecido novo prazo com igual período para",
+    "suplente poderá ser convocado para habilitação.",
+    "suplente poderá ser convocado para habilitação."
+  ]
+}
