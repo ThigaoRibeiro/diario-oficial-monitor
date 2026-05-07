@@ -1,0 +1,29 @@
+{
+  "date": "2026-05-07",
+  "date_display": "07/05/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2271,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_07-05-2026_-_quinta-feira_06060329.pdf",
+  "convocados_count": 1,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "BELLARMINO BARROSO BAYLÃO",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Rua Ante-",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "CRONOGRAMA DE CONVOCAÇÃO",
+    "TERCEIRA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "PMNI/000759/2026 PMNI/000814/2026 PMNI/000816/2026 PMNI/000818/2026 EDITAL DE CONVOCAÇÃO",
+    "EDITAL DE CONVOCAÇÃO corridos contados a partir desta publicação para tomar ciência nos",
+    "EDITAL DE CONVOCAÇÃO do ex-servidor inativo, FRANCISCO FERNANDES RAMOS, que ocupou o"
+  ]
+}
