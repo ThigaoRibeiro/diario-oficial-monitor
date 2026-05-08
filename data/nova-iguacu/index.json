@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-05-08",
+    "date_display": "08/05/2026",
+    "edition_id": 2272,
+    "convocados_count": 9,
+    "has_convocacoes": true
+  },
+  {
     "date": "2026-05-07",
     "date_display": "07/05/2026",
     "edition_id": 2271,
