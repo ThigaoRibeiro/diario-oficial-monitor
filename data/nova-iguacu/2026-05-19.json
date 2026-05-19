@@ -1,0 +1,35 @@
+{
+  "date": "2026-05-19",
+  "date_display": "19/05/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2281,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_18-05-2026_-_segunda-feira_15062328.pdf",
+  "convocados_count": 2,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "DAS NORMAS DE INSCRIÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 10,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura",
+      "observacao": null
+    },
+    {
+      "nome": "DAS SANÇÕES ADMINISTRATIVAS",
+      "cargo": "Não especificado",
+      "classificacao": 18,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Cultura",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "cor branca e empilhável. 1.6. A convocação pública a que se refere este Edital poderá ser adiada,",
+    "tanto, o HABILITADO/ CREDENCIADO pode ou não ser convocado para bem como a previsão do plano plurianual, conforme Art. 105 da Lei n°"
+  ]
+}
