@@ -1,0 +1,28 @@
+{
+  "date": "2026-05-24",
+  "date_display": "24/05/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2286,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_22-05-2026_-_sexta-feira_21054805.pdf",
+  "convocados_count": 1,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "BELLARMINO BARROSO BAYLAO",
+      "cargo": "Não especificado",
+      "classificacao": 2,
+      "edital": null,
+      "prazo": null,
+      "local": "Rua Antenor de Moura Raunhetti, 95 – Térreo – Setor",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "termos da Lei Federal nº 14.133/2021 e o Decreto Municipal nº 12.997/2022, QUINTA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "CRONOGRAMA DE CONVOCAÇÃO",
+    "EDITAL DE CONVOCAÇÃO 6613467",
+    "EDITAL DE CONVOCAÇÃO ÇÃO DAS OFICINAS DO SERVIÇO DE CONVIVÊNCIA E FORTALECI-"
+  ]
+}
