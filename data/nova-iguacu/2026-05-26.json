@@ -1,0 +1,53 @@
+{
+  "date": "2026-05-26",
+  "date_display": "26/05/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2287,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_25-05-2026_-_segunda-feira_22052838.pdf",
+  "convocados_count": 4,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "DO OBJETO",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Controle Geral - SEMCONGER, em atendimento à e futuras parcerias na",
+      "observacao": null
+    },
+    {
+      "nome": "DAS CONDIÇÕES DE PARTICIPAÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Admi-",
+      "observacao": null
+    },
+    {
+      "nome": "DAS ÁREAS DE ATUAÇÃO PARA CREDENCIAMENTO",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Admi-",
+      "observacao": null
+    },
+    {
+      "nome": "DAS DISPOSIÇÕES FINAIS",
+      "cargo": "Não especificado",
+      "classificacao": 7,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Admi-",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "EDITAL DE CONVOCAÇÃO Nº 03/2026 taria Municipal de Educação, torna público o presente Edital de Credencia-",
+    "mes médicos exigidos para a 2ª fase da convocação (ANEXO VI do Edi-"
+  ]
+}
