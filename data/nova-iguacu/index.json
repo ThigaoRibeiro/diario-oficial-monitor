@@ -1,5 +1,12 @@
 [
   {
+    "date": "2026-06-13",
+    "date_display": "13/06/2026",
+    "edition_id": 2304,
+    "convocados_count": 0,
+    "has_convocacoes": false
+  },
+  {
     "date": "2026-06-12",
     "date_display": "12/06/2026",
     "edition_id": 2303,
