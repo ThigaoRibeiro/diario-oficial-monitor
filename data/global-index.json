@@ -1,5 +1,15 @@
 [
   {
+    "date": "2026-06-17",
+    "date_display": "17/06/2026",
+    "edition_id": 2306,
+    "convocados_count": 1,
+    "has_convocacoes": true,
+    "prefeitura_id": "nova-iguacu",
+    "prefeitura_nome": "Nova Iguaçu",
+    "prefeitura_estado": "RJ"
+  },
+  {
     "date": "2026-06-16",
     "date_display": "16/06/2026",
     "edition_id": 2305,
