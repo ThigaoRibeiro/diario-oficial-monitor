@@ -1,0 +1,55 @@
+{
+  "date": "2026-06-18",
+  "date_display": "18/06/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2307,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_17-06-2026_-_quarta-feira_16062511.pdf",
+  "convocados_count": 4,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "SOARES CORRÊNCIA",
+      "cargo": "Não especificado",
+      "classificacao": 51,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Assistência Social – SEMAS, situada na Avenida ALINE PEREIRA DA AMP",
+      "observacao": null
+    },
+    {
+      "nome": "BARRETO CORRÊNCIA CATIVA DASTRO",
+      "cargo": "Não especificado",
+      "classificacao": 52,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Assistência Social – SEMAS, situada na Avenida ALINE PEREIRA DA AMP",
+      "observacao": null
+    },
+    {
+      "nome": "GUES DE SOUZA DÍGENAS",
+      "cargo": "Não especificado",
+      "classificacao": 221,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Assistência Social – SEMAS, situada na Avenida ALINE PEREIRA DA AMP",
+      "observacao": null
+    },
+    {
+      "nome": "SOUSA CORRÊNCIA",
+      "cargo": "Não especificado",
+      "classificacao": 16,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Assistência Social – SEMAS, situada na Avenida ALINE PEREIRA DA AMP",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "Id. 03704/2026 CRONOGRAMA DE CONVOCAÇÃO",
+    "NONA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "Art. 1º - Tornar pública a convocação dos suplentes do EDITAL DE CHA-",
+    "dos. A relação dos suplentes convocados e a tabela de prazos, exclusiva"
+  ]
+}
