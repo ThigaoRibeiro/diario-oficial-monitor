@@ -1,0 +1,315 @@
+{
+  "date": "2026-06-19",
+  "date_display": "19/06/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2308,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_18-06-2026_-_quinta-feira_17053746.pdf",
+  "convocados_count": 33,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "MARIANA KELLY DA COSTA REZENDE",
+      "cargo": "Não especificado",
+      "classificacao": 62,
+      "edital": null,
+      "prazo": null,
+      "local": "III, Assistente Social III, Pedagogo III,",
+      "observacao": null
+    },
+    {
+      "nome": "JULIANA PRATA DA COSTA",
+      "cargo": "Não especificado",
+      "classificacao": 63,
+      "edital": null,
+      "prazo": null,
+      "local": "III, Assistente Social III, Pedagogo III,",
+      "observacao": null
+    },
+    {
+      "nome": "JEFERSON ALVES VEIGA",
+      "cargo": "Não especificado",
+      "classificacao": 65,
+      "edital": null,
+      "prazo": null,
+      "local": "III, Assistente Social III, Pedagogo III,",
+      "observacao": null
+    },
+    {
+      "nome": "MORGANA MARTINS DOS SANTOS LOURENÇO",
+      "cargo": "Não especificado",
+      "classificacao": 36,
+      "edital": null,
+      "prazo": null,
+      "local": "III, Assistente Social III, Pedagogo III,",
+      "observacao": null
+    },
+    {
+      "nome": "THAÍS RODRIGUES DA SILVA MELLO",
+      "cargo": "Não especificado",
+      "classificacao": 45,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "LUIZ FERNANDO DE OLIVEIRA GUIMARÃES",
+      "cargo": "Não especificado",
+      "classificacao": 85,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "FABIO DA SILVA PEREIRA",
+      "cargo": "Não especificado",
+      "classificacao": 75,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "ANDERSON LUIZ DO AMARAL CARDOSO",
+      "cargo": "Não especificado",
+      "classificacao": 76,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "THIAGO SANTOS DE ARAUJO",
+      "cargo": "Não especificado",
+      "classificacao": 78,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "EDUARDA HOFFLING MURAT DO PILLAR",
+      "cargo": "Não especificado",
+      "classificacao": 127,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "FELIPE ALVES DE SOUZA",
+      "cargo": "Não especificado",
+      "classificacao": 56,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "JÚLIO CÉSAR OLIVEIRA MANHÃES",
+      "cargo": "Não especificado",
+      "classificacao": 57,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "FELIPE FREIRE MAGALHÃES LIMA",
+      "cargo": "Não especificado",
+      "classificacao": 58,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "THAYS MARINHO ANTONIO CLASSIFICAÇÃO GERAL",
+      "cargo": "Não especificado",
+      "classificacao": 72,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "DANIELLE TELLES DE MENEZES",
+      "cargo": "Não especificado",
+      "classificacao": 75,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "TATIANA DA SILVA OLIVEIRA",
+      "cargo": "Não especificado",
+      "classificacao": 78,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "JOENY BESSA BORGES",
+      "cargo": "Não especificado",
+      "classificacao": 98,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "TALITA ROBERTO MILITINO",
+      "cargo": "Não especificado",
+      "classificacao": 30,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "MARCOS CARDOSO PINTO",
+      "cargo": "Não especificado",
+      "classificacao": 99,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "ANDRESSA DOS REIS CORREA DE SOUSA",
+      "cargo": "Não especificado",
+      "classificacao": 31,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "DANIEL FELIZ CORREIA DA SILVA",
+      "cargo": "Não especificado",
+      "classificacao": 102,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "EDMAR MANACEZ PINHO",
+      "cargo": "Não especificado",
+      "classificacao": 103,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "ANA PAULA DE OLIVEIRA FAGUNDES",
+      "cargo": "Não especificado",
+      "classificacao": 47,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "LUANA ROCHA MIRANDA MARTINS",
+      "cargo": "Não especificado",
+      "classificacao": 83,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "ALEXANDRO DA SILVA MELO",
+      "cargo": "Não especificado",
+      "classificacao": 105,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "KAMILA PEREIRA SANTOS",
+      "cargo": "Não especificado",
+      "classificacao": 107,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "MARCOS VINÍCIUS FERREIRA LIMA",
+      "cargo": "Não especificado",
+      "classificacao": 48,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "RENATO DAS NEVES GUIMARÃES FILHO",
+      "cargo": "Não especificado",
+      "classificacao": 151,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "AMANDA DA CONCEIÇÃO AGUIAR",
+      "cargo": "Não especificado",
+      "classificacao": 76,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "RUTE CECÍLIA ANUNCIAÇÃO DA SILVA",
+      "cargo": "Não especificado",
+      "classificacao": 31,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA CAROLINE DA SILVA SOUZA",
+      "cargo": "Não especificado",
+      "classificacao": 64,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "LUANA COELHO DA SILVA",
+      "cargo": "Não especificado",
+      "classificacao": 22,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    },
+    {
+      "nome": "PAULO CEZAR PEREIRA DA SILVA SILIPRANDI",
+      "cargo": "Não especificado",
+      "classificacao": 75,
+      "edital": null,
+      "prazo": null,
+      "local": "MUNICIPAL DE EDUCA-",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "24ª CONVOCAÇÃO DO CONCURSO PÚBLICO",
+    "Os convocados que passarem pelo Exame médico pré-admissional, físico e 37º KENNET ANDERSSON CAETANO OLIVEIRA",
+    "as fases da convocação. CLASSIFICAÇÃO GERAL NOMES"
+  ]
+}
