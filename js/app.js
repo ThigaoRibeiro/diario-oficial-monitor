@@ -34,6 +34,7 @@ let activePrefFilter = null;
 let todayQuery       = "";
 let watchName        = "";
 let selectedPrefs    = [];
+let demoCards        = [];     // cards mockados para simulação de teste
 
 // Seleção IBGE
 let ibgeEstados      = [];
@@ -160,11 +161,16 @@ elTabs.forEach(tab => {
 // ═══════════════════════════════════════════════════════════════
 
 function renderCard(c, q, showPref = true) {
+  const isWatched = watchName && c.nome && c.nome.toUpperCase().includes(watchName.toUpperCase());
+  const cardClass = isWatched ? "card highlighted" : "card";
+
   const pref = showPref && c.prefeitura_nome
     ? `<span class="card-pref-badge">🏛️ ${escHtml(c.prefeitura_nome)} — ${escHtml(c.prefeitura_estado||"")}</span>`
     : "";
   const classif = c.classificacao != null
     ? `<span class="card-classif">${c.classificacao}º</span>` : "";
+  const watchBadge = isWatched
+    ? `<span class="card-watch-badge">🎯 Monitorado</span>` : "";
   const cargo = c.cargo && c.cargo !== "Não especificado"
     ? `<div class="card-cargo">🏛️ ${hl(c.cargo, q)}</div>` : "";
   const edital = c.edital
@@ -176,8 +182,8 @@ function renderCard(c, q, showPref = true) {
   const dt     = c.date
     ? `<div class="card-meta-item"><span>📅</span>${fmtDate(c.date)}</div>` : "";
 
-  return `<div class="card">
-    ${pref}${classif}
+  return `<div class="${cardClass}">
+    ${pref}${classif}${watchBadge}
     <div class="card-name">${hl(c.nome, q)}</div>
     ${cargo}
     <div class="card-meta">${edital}${local}${dt}</div>
@@ -240,6 +246,12 @@ function renderHoje() {
 async function loadHojeCards(entries) {
   showHojeState("loading");
   let all = [];
+  
+  // Insere cards de simulação se houver
+  if (demoCards.length) {
+    demoCards.forEach(c => all.push(c));
+  }
+
   for (const e of entries) {
     try {
       const data = await fetchJSON(`${DATA_BASE}/${e.prefeitura_id}/${e.date}.json`);
@@ -339,6 +351,44 @@ elBtnSaveName.addEventListener("click", ()=>{
   updateWatchBadge();
   setTimeout(()=>elNameSavedMsg.style.display="none", 2500);
 });
+
+const elBtnDemoConvocacao = $("btn-demo-convocacao");
+if (elBtnDemoConvocacao) {
+  elBtnDemoConvocacao.addEventListener("click", () => {
+    const testName = watchName || "ESTER DA SILVA";
+    if (!watchName) {
+      watchName = testName;
+      elConfigName.value = testName;
+      elNameInput.value = testName;
+      localStorage.setItem(LS_NAME, testName);
+      localStorage.setItem(LS_WATCH, "true");
+      updateWatchBadge();
+    }
+    
+    const currentDate = allDates[0] || new Date().toISOString().split("T")[0];
+    
+    demoCards = [{
+      nome: watchName,
+      cargo: "PROFESSOR DE EDUCAÇÃO INFANTIL",
+      classificacao: 12,
+      edital: "Edital 001/2026",
+      prazo: new Date(Date.now() + 5*24*60*60*1000).toLocaleDateString("pt-BR"),
+      local: "Secretaria Municipal de Educação (Semug)",
+      date: currentDate,
+      prefeitura_nome: "Nova Iguaçu",
+      prefeitura_estado: "RJ",
+      prefeitura_id: "nova-iguacu"
+    }];
+    
+    // Simula clique na aba "Hoje"
+    elTabs[0].click(); 
+    
+    // Recarrega cards da aba Hoje
+    renderHoje();
+    
+    alert(`Simulação criada! Veja o card destacado para "${watchName}" na aba Hoje.`);
+  });
+}
 
 elBtnClearLocal.addEventListener("click", ()=>{
   if (!confirm("Apagar nome salvo e prefeituras? Não é possível desfazer.")) return;
