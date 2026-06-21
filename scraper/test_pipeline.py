@@ -108,10 +108,20 @@ def test_outputs(convocados: list, pref: dict, date_str: str):
     log.info("── Teste 5: Simulação de Outputs ──────────────")
     total = len(convocados)
     summary = []
+    
+    # Simula carregamento local dos monitorados
+    from main import load_watched_names, check_watched_matches
+    watched = load_watched_names()
+    matched = check_watched_matches(convocados, "", watched)
+    
     if total > 0:
         summary.append(f"✅ {pref['nome']} — {total} convocado(s)")
+        if matched:
+            summary.append(f"   🎯 MONITORADO(S) ENCONTRADO(S): {', '.join(matched)}")
         for c in convocados[:5]:
-            summary.append(f"   • {c['nome']}")
+            is_monitored = any(m in c["nome"].upper() for m in watched)
+            bullet = "🎯" if is_monitored else "•"
+            summary.append(f"   {bullet} {c['nome']}")
         if total > 5:
             summary.append(f"   ... e mais {total - 5}")
     else:
@@ -120,10 +130,14 @@ def test_outputs(convocados: list, pref: dict, date_str: str):
     log.info("   convocados_count = %d", total)
     log.info("   has_convocacoes  = %s", "true" if total > 0 else "false")
     log.info("   edition_date     = %s", date_str)
-    log.info("   email_subject    = %s",
-             f"🔔 Diário Oficial — {total} convocados em {date_str}" if total > 0
-             else f"📭 Diário Oficial {date_str} — sem convocações")
+    
+    subject = (f"🚨 URGENTE: Convocação para {', '.join(matched)} em {date_str}!" if matched
+               else f"🔔 Diário Oficial — {total} convocados em {date_str}" if total > 0
+               else f"📭 Diário Oficial {date_str} — sem convocações")
+    log.info("   email_subject    = %s", subject)
     log.info("   email_summary:\n%s", "\n".join(summary))
+    log.info("   has_watched_match = %s", "true" if matched else "false")
+    log.info("   watched_matched_names = %s", ", ".join(matched))
     log.info("✅ Outputs OK")
 
 

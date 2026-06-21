@@ -39,19 +39,19 @@ class Convocado:
 
 # Linha com número de classificação e nome: "1. FULANO DE TAL" ou "1º FULANO DE TAL"
 CLASSIF_NAME_PATTERN = re.compile(
-    r"^\s*(\d{1,4})[.ºª°\-–]?\s+([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ][A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ\s]{4,60})\s*$",
+    r"^\s*(\d{1,4})[.ºª°\-–]?\s+([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ][A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ'\s\-–—]{4,60})\s*$",
     re.UNICODE,
 )
 
 # Linha de tabela: número | nome | cargo (separados por 2+ espaços ou tab)
 TABLE_ROW_PATTERN = re.compile(
-    r"^\s*(\d{1,4})\s{2,}([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ][A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ\s]{4,60})\s{2,}(.+?)\s*$",
+    r"^\s*(\d{1,4})\s{2,}([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ][A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ'\s\-–—]{4,60})\s{2,}(.+?)\s*$",
     re.UNICODE,
 )
 
 # Extrai cargo da mesma linha ou linha seguinte
 CARGO_INLINE_PATTERN = re.compile(
-    r"(?:CARGO[:\s]+|FUNÇÃO[:\s]+|VAGA[:\s]+)([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ][^\n]{3,60})",
+    r"(?:CARGO[:\s]+|FUNÇÃO[:\s]+|VAGA[:\s]+)([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ][^\n]{3,60})",
     re.IGNORECASE | re.UNICODE,
 )
 
@@ -75,8 +75,8 @@ LOCAL_PATTERN = re.compile(
 
 # Nomes completos em caixa alta (mínimo 2 palavras, cada uma com 2+ chars)
 NOME_PATTERN = re.compile(
-    r"(?<!\d\s)(?<!\d\.\s)\b([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ]{2,}(?:\s+(?:DE|DA|DO|DOS|DAS|E)\s+)?[A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ]{2,}"
-    r"(?:\s+[A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇ]{2,}){0,5})\b",
+    r"(?<!\d\s)(?<!\d\.\s)\b([A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ]{2,}(?:\s+(?:DE|DA|DO|DOS|DAS|E)\s+)?[A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ]{2,}"
+    r"(?:\s+[A-ZÁÉÍÓÚÂÊÎÔÛÀÃÕÇÜÑ]{2,}){0,5})\b",
     re.UNICODE,
 )
 

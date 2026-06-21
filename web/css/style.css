@@ -354,6 +354,40 @@ a:hover { color: var(--cyan); text-decoration: underline; }
   margin-top: 10px; display: inline-block;
 }
 
+/* Card Destacado (Nomes Monitorados) */
+.card.highlighted {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, #1e1510 0%, #111827 100%);
+  box-shadow: 0 4px 24px rgba(245, 158, 11, 0.15), var(--shadow-card);
+  animation: pulse-glow 3s infinite alternate;
+}
+.card.highlighted::before {
+  background: linear-gradient(90deg, var(--amber), #f43f5e, var(--amber));
+}
+.card.highlighted:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,.6), 0 0 28px rgba(245, 158, 11, 0.35);
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 4px 20px rgba(245, 158, 11, 0.1), var(--shadow-card); }
+  100% { box-shadow: 0 4px 28px rgba(245, 158, 11, 0.25), var(--shadow-card); }
+}
+
+/* Badge para nomes monitorados */
+.card-watch-badge {
+  display: inline-block;
+  background: var(--amber-dim);
+  color: var(--amber);
+  border: 1px solid rgba(245,158,11,.3);
+  font-size: 0.68rem; font-weight: 800;
+  padding: 3px 10px; border-radius: 999px;
+  margin-left: 5px; margin-bottom: 8px;
+  text-transform: uppercase; letter-spacing: .04em;
+  box-shadow: 0 2px 6px rgba(245,158,11,0.15);
+}
+
 /* ─── ESTADOS ─────────────────────────────────────────────── */
 .loading-state {
   text-align: center; padding: 70px 20px; color: var(--text-dim);

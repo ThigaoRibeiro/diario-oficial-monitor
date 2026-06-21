@@ -50,6 +50,7 @@ jobs:
         run: python main.py
         env:
           FORCE_REPROCESS: ${{ github.event.inputs.force }}
+          WATCH_NAMES: ${{ secrets.WATCH_NAMES }}
 
       # ── 4. Commit dos dados ───────────────────────────────────────────────
       - name: Commit e push dos dados
@@ -82,9 +83,58 @@ jobs:
           force_orphan: false
           keep_files: true   # preserva arquivos anteriores no gh-pages
 
-      # ── 6. Enviar email — SEMPRE (com ou sem convocados) ──────────────────
+      # ── 6. Enviar email — SEMPRE (com ou sem convocados, prioritário se houver match) ──
+      - name: Enviar email — ALERTA DE CONVOCAÇÃO MONITORADA 🚨
+        if: steps.scraper.outputs.has_watched_match == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: false
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "🚨 URGENTE: Convocação para ${{ steps.scraper.outputs.watched_matched_names }} em ${{ steps.scraper.outputs.edition_date }}!"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "Diário Oficial Monitor <${{ secrets.EMAIL_USERNAME }}>"
+          attachments: tmp/*.pdf
+          html_body: |
+            <html>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #fff5f5;">
+              <div style="background: linear-gradient(135deg, #e53e3e, #9b2c2c); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center;">
+                <h1 style="margin: 0; font-size: 24px; letter-spacing: 0.05em;">🚨 CONVOCAÇÃO ENCONTRADA!</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 16px; font-weight: bold;">
+                  Nome(s) monitorado(s): ${{ steps.scraper.outputs.watched_matched_names }}
+                </p>
+                <p style="margin: 4px 0 0 0; opacity: 0.8; font-size: 14px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
+              </div>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 16px rgba(229,62,62,0.15); border: 2px solid #e53e3e; border-top: none;">
+                <div style="background: #fff5f5; border-left: 4px solid #e53e3e; padding: 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #c53030; font-size: 18px;">🎯 ATENÇÃO IMEDIATA</strong>
+                  <p style="margin: 6px 0 0 0; color: #742a2a; font-size: 14px; line-height: 1.5;">
+                    Identificamos uma correspondência direta para um ou mais nomes de interesse no Diário Oficial de hoje. Verifique os detalhes e prazos imediatamente no anexo ou no site.
+                  </p>
+                </div>
+                <h3 style="color: #333; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 8px;">Resumo das Convocações:</h3>
+                <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; border: 1px solid #e0e0e0;">
+                  ${{ steps.scraper.outputs.email_summary_html }}
+                </div>
+                <div style="text-align: center;">
+                  <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+                     style="display: inline-block; background: linear-gradient(135deg, #e53e3e, #9b2c2c); color: white; padding: 14px 28px;
+                            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 15px; box-shadow: 0 4px 12px rgba(229,62,62,0.2);">
+                    🔗 Acessar Painel do Monitor →
+                  </a>
+                </div>
+                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px; text-align: center;">
+                  Este é um alerta prioritário automático do seu Diário Oficial Monitor.<br>
+                  O PDF completo está anexado a este e-mail.
+                </p>
+              </div>
+            </body>
+            </html>
+
       - name: Enviar email — com convocados
-        if: steps.scraper.outputs.has_convocacoes == 'true'
+        if: steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -123,7 +173,7 @@ jobs:
             </html>
 
       - name: Enviar email — sem convocados (boletim diário)
-        if: steps.scraper.outputs.has_convocacoes == 'false'
+        if: steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'false'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com

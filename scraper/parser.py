@@ -72,8 +72,8 @@ def find_relevant_sections(full_text: str) -> list[dict]:
                 current_lines.append("")
             continue
 
-        # Detecta início de nova seção relevante
-        if SECTION_PATTERN.search(stripped):
+        # Detecta início de nova seção relevante (valida comprimento da linha para evitar parágrafos)
+        if len(stripped) < 120 and SECTION_PATTERN.search(stripped):
             # Salva seção anterior se existir
             if current_section and current_lines:
                 sections.append({
