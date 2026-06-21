@@ -254,7 +254,8 @@ async function loadHojeCards(entries) {
 
   for (const e of entries) {
     try {
-      const data = await fetchJSON(`${DATA_BASE}/${e.prefeitura_id}/${e.date}.json`);
+      const jsonPath = e.json_path || `${e.date}.json`;
+      const data = await fetchJSON(`${DATA_BASE}/${e.prefeitura_id}/${jsonPath}`);
       (data.convocados||[]).forEach(c => all.push({
         ...c, date:e.date,
         prefeitura_nome:   e.prefeitura_nome,
@@ -304,7 +305,8 @@ async function searchByName(name) {
       for (const entry of idx) {
         if (!entry.has_convocacoes) continue;
         try {
-          const data = await fetchJSON(`${DATA_BASE}/${pref.id}/${entry.date}.json`);
+          const jsonPath = entry.json_path || `${entry.date}.json`;
+          const data = await fetchJSON(`${DATA_BASE}/${pref.id}/${jsonPath}`);
           (data.convocados||[]).filter(c=>(c.nome||"").toLowerCase().includes(q))
             .forEach(c=>found.push({...c, date:entry.date, prefeitura_nome:pref.nome, prefeitura_estado:pref.estado, prefeitura_id:pref.id}));
         } catch {}

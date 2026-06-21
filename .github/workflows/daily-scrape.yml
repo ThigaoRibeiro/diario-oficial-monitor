@@ -43,6 +43,10 @@ jobs:
       - name: Instalar dependências Python
         run: pip install -r scraper/requirements.txt
 
+      - name: Executar testes rapidos
+        working-directory: scraper
+        run: python -m unittest discover -s . -p "test_*.py"
+
       # ── 3. Scraping ──────────────────────────────────────────────────────
       - name: Executar scraper
         id: scraper
@@ -83,9 +87,40 @@ jobs:
           force_orphan: false
           keep_files: true   # preserva arquivos anteriores no gh-pages
 
+      - name: Enviar email - falha tecnica
+        if: steps.scraper.outputs.has_errors == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          secure: false
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "Falha no Diario Oficial Monitor em ${{ steps.scraper.outputs.edition_date }}"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "Diario Oficial Monitor <${{ secrets.EMAIL_USERNAME }}>"
+          html_body: |
+            <html>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #fff7ed;">
+              <div style="background: #c2410c; color: white; padding: 24px; border-radius: 12px 12px 0 0;">
+                <h1 style="margin: 0; font-size: 22px;">Falha tecnica no monitor</h1>
+                <p style="margin: 8px 0 0 0; opacity: .9;">O scraper nao conseguiu concluir uma ou mais prefeituras.</p>
+              </div>
+              <div style="background: white; padding: 24px; border: 1px solid #fed7aa; border-top: 0; border-radius: 0 0 12px 12px;">
+                <p style="color: #7c2d12; line-height: 1.6;">
+                  Para evitar falso negativo, este e-mail substitui o boletim "sem convocacoes".
+                  Verifique a execucao no GitHub Actions e confira manualmente o Diario Oficial.
+                </p>
+                <div style="background: #fffbeb; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; border: 1px solid #fed7aa;">
+                  ${{ steps.scraper.outputs.email_summary_html }}
+                </div>
+              </div>
+            </body>
+            </html>
+
       # ── 6. Enviar email — SEMPRE (com ou sem convocados, prioritário se houver match) ──
       - name: Enviar email — ALERTA DE CONVOCAÇÃO MONITORADA 🚨
-        if: steps.scraper.outputs.has_watched_match == 'true'
+        if: steps.scraper.outputs.has_errors != 'true' && steps.scraper.outputs.has_watched_match == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -134,7 +169,7 @@ jobs:
             </html>
 
       - name: Enviar email — com convocados
-        if: steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'true'
+        if: steps.scraper.outputs.has_errors != 'true' && steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -173,7 +208,7 @@ jobs:
             </html>
 
       - name: Enviar email — sem convocados (boletim diário)
-        if: steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'false'
+        if: steps.scraper.outputs.has_errors != 'true' && steps.scraper.outputs.has_watched_match == 'false' && steps.scraper.outputs.has_convocacoes == 'false'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com

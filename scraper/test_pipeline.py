@@ -152,7 +152,16 @@ def run_full_pipeline():
 
     try:
         import main
-        main.run()
+        original_data_dir = main.DATA_DIR
+        original_tmp_dir = main.TMP_DIR
+        with tempfile.TemporaryDirectory(prefix="dom-data-") as data_dir, tempfile.TemporaryDirectory(prefix="dom-tmp-") as tmp_dir:
+            main.DATA_DIR = Path(data_dir)
+            main.TMP_DIR = Path(tmp_dir)
+            main.DATA_DIR.mkdir(parents=True, exist_ok=True)
+            main.TMP_DIR.mkdir(parents=True, exist_ok=True)
+            main.run()
+        main.DATA_DIR = original_data_dir
+        main.TMP_DIR = original_tmp_dir
         log.info("\n── Outputs capturados ─────────────────────────")
         outputs = {}
         lines = Path(tmp_output).read_text(encoding="utf-8").splitlines()

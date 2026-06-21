@@ -3,5 +3,6 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+config/monitorados.json
 *.pdf
 .DS_Store

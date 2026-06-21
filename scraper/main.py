@@ -15,11 +15,12 @@ import logging
 import os
 import re
 import sys
-from datetime import date
+import unicodedata
+from datetime import date, datetime
 from html import escape
 from pathlib import Path
 
-from fetcher import fetch_prefeitura
+from fetcher import fetch_prefeitura, _extract_date_from_pdf_url
 from parser import parse_pdf
 from extractor import extract_convocados
 
@@ -37,6 +38,29 @@ TMP_DIR    = ROOT / "tmp"
 
 DATA_DIR.mkdir(exist_ok=True)
 TMP_DIR.mkdir(exist_ok=True)
+
+
+def edition_json_name(iso_date: str, edition_id: int | str) -> str:
+    return f"{iso_date}_{edition_id}.json"
+
+
+def date_display_to_iso(date_display: str) -> str:
+    return datetime.strptime(date_display, "%d/%m/%Y").strftime("%Y-%m-%d")
+
+
+def normalize_index_entry(entry: dict) -> dict:
+    normalized = dict(entry)
+    original_date = normalized.get("date")
+
+    if original_date and not normalized.get("json_path"):
+        normalized["json_path"] = f"{original_date}.json"
+
+    pdf_date = _extract_date_from_pdf_url(normalized.get("pdf_url", ""))
+    if pdf_date:
+        normalized["date_display"] = pdf_date
+        normalized["date"] = date_display_to_iso(pdf_date)
+
+    return normalized
 
 
 # ── Monitoramento de Nomes ────────────────────────────────────
@@ -71,18 +95,30 @@ def load_watched_names() -> list[str]:
     return names
 
 
+def normalize_for_match(text: str) -> str:
+    """Uppercase, remove accents and collapse whitespace for robust name matching."""
+    normalized = unicodedata.normalize("NFKD", str(text or "").upper())
+    without_accents = "".join(ch for ch in normalized if not unicodedata.combining(ch))
+    return " ".join(without_accents.split())
+
+
 def check_watched_matches(convocados: list[dict], full_text: str, watched_names: list[str]) -> list[str]:
     """Retorna a lista de nomes monitorados que foram encontrados."""
     matched = []
     if not watched_names:
         return matched
 
+    normalized_text = normalize_for_match(full_text)
+
     for name in watched_names:
-        name_upper = name.upper()
+        normalized_name = normalize_for_match(name)
+        if not normalized_name:
+            continue
+
         # 1. Verifica nos convocados estruturados
         struct_match = False
         for c in convocados:
-            if name_upper in c["nome"].upper():
+            if normalized_name in normalize_for_match(c.get("nome", "")):
                 struct_match = True
                 break
         
@@ -94,12 +130,12 @@ def check_watched_matches(convocados: list[dict], full_text: str, watched_names:
         # para evitar substrings indesejadas (como "ester" em "leste", "semestre")
         # Se o nome for curto (ex: menos de 5 letras), usamos obrigatoriamente \b.
         # Se for longo (ex: "ESTER DA SILVA"), fazemos busca direta por substring.
-        if len(name_upper) < 5:
-            pattern = rf"\b{re.escape(name_upper)}\b"
+        if len(normalized_name) < 5:
+            pattern = rf"\b{re.escape(normalized_name)}\b"
         else:
-            pattern = re.escape(name_upper)
+            pattern = re.escape(normalized_name)
             
-        if re.search(pattern, full_text.upper()):
+        if re.search(pattern, normalized_text):
             matched.append(name)
             
     return matched
@@ -109,13 +145,47 @@ def check_watched_matches(convocados: list[dict], full_text: str, watched_names:
 
 def load_prefeitura_index(prefeitura_id: str) -> list[dict]:
     path = DATA_DIR / prefeitura_id / "index.json"
-    return json.loads(path.read_text(encoding="utf-8")) if path.exists() else []
+    if not path.exists():
+        return []
+
+    entries = json.loads(path.read_text(encoding="utf-8"))
+    enriched = []
+    for entry in entries:
+        item = dict(entry)
+        original_date = item.get("date")
+        json_path = item.get("json_path") or (f"{original_date}.json" if original_date else None)
+        detail_path = path.parent / json_path if json_path else None
+
+        if detail_path and detail_path.exists():
+            try:
+                detail = json.loads(detail_path.read_text(encoding="utf-8"))
+                for key in ("edition_id", "pdf_url", "date_display", "convocados_count", "has_convocacoes"):
+                    if key in detail:
+                        item[key] = detail[key]
+                item["json_path"] = json_path
+            except Exception as e:
+                log.warning("[%s] Falha ao enriquecer indice com %s: %s", prefeitura_id, detail_path.name, e)
+
+        enriched.append(normalize_index_entry(item))
+
+    return enriched
 
 
 def save_prefeitura_index(prefeitura_id: str, index: list[dict]) -> None:
     path = DATA_DIR / prefeitura_id / "index.json"
     path.parent.mkdir(parents=True, exist_ok=True)
-    index.sort(key=lambda x: x["date"], reverse=True)
+
+    deduped = {}
+    for entry in index:
+        key = str(entry.get("edition_id") or entry.get("date"))
+        current = deduped.get(key)
+        entry_priority = (1 if entry.get("json_path") else 0, entry.get("date", ""))
+        current_priority = (1 if current and current.get("json_path") else 0, current.get("date", "") if current else "")
+        if current is None or entry_priority > current_priority:
+            deduped[key] = entry
+
+    index = list(deduped.values())
+    index.sort(key=lambda x: (x["date"], str(x.get("edition_id", ""))), reverse=True)
     path.write_text(json.dumps(index, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
@@ -180,7 +250,8 @@ def process_prefeitura(pref: dict, watched_names: list[str]) -> dict:
     pdf_path = Path(meta["pdf_local"])
 
     # Verifica se já processamos hoje (pode ser ignorado via FORCE_REPROCESS)
-    output_path = DATA_DIR / pid / f"{iso_date}.json"
+    json_name = edition_json_name(iso_date, meta["edition_id"])
+    output_path = DATA_DIR / pid / json_name
     force = os.environ.get("FORCE_REPROCESS", "false").lower() == "true"
     if output_path.exists() and not force:
         log.info("[%s] Edição %s já processada. Use FORCE_REPROCESS=true para reprocessar.", pid, iso_date)
@@ -188,9 +259,43 @@ def process_prefeitura(pref: dict, watched_names: list[str]) -> dict:
         result["convocados"] = existing.get("convocados", [])
         result["skipped"]    = True
         result["date"]       = iso_date
+        result["date_display"] = meta["date_display"]
         result["edition_id"] = meta["edition_id"]
-        # Se foi skipado, fazemos o match apenas na lista estruturada
-        result["matched_watched"] = check_watched_matches(result["convocados"], "", watched_names)
+        result["pdf_url"]    = meta["pdf_url"]
+        result["json_path"]  = json_name
+
+        full_text = ""
+        if watched_names:
+            try:
+                parsed = parse_pdf(pdf_path)
+                full_text = parsed["full_text"]
+            except Exception as e:
+                log.warning("[%s] Falha ao revalidar PDF ja processado para nomes monitorados: %s", pid, e)
+
+        result["matched_watched"] = check_watched_matches(result["convocados"], full_text, watched_names)
+
+        idx = load_prefeitura_index(pid)
+        for entry in idx:
+            if str(entry.get("edition_id")) == str(meta["edition_id"]):
+                entry.update({
+                    "date_display": meta["date_display"],
+                    "edition_id": meta["edition_id"],
+                    "pdf_url": meta["pdf_url"],
+                    "json_path": json_name,
+                })
+                break
+        else:
+            idx.append({
+                "date": iso_date,
+                "date_display": meta["date_display"],
+                "edition_id": meta["edition_id"],
+                "pdf_url": meta["pdf_url"],
+                "json_path": json_name,
+                "convocados_count": len(result["convocados"]),
+                "has_convocacoes": len(result["convocados"]) > 0,
+            })
+        save_prefeitura_index(pid, idx)
+
         return result
     elif output_path.exists() and force:
         log.info("[%s] Reprocessando edição %s (FORCE_REPROCESS=true).", pid, iso_date)
@@ -218,11 +323,11 @@ def process_prefeitura(pref: dict, watched_names: list[str]) -> dict:
         "prefeitura_estado": pref["estado"],
         "edition_id":       meta["edition_id"],
         "pdf_url":          meta["pdf_url"],
+        "json_path":        json_name,
         "convocados_count": len(convocados),
         "has_convocacoes":  len(convocados) > 0,
         "convocados":       convocados,
         "sections_found":   [s["title"] for s in parsed["relevant_sections"]],
-        "matched_watched":  matched,
     }
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -231,11 +336,13 @@ def process_prefeitura(pref: dict, watched_names: list[str]) -> dict:
 
     # Atualiza índice da prefeitura
     idx = load_prefeitura_index(pid)
-    idx = [e for e in idx if e["date"] != iso_date]
+    idx = [e for e in idx if str(e.get("edition_id")) != str(meta["edition_id"])]
     idx.append({
         "date":             iso_date,
         "date_display":     meta["date_display"],
         "edition_id":       meta["edition_id"],
+        "pdf_url":          meta["pdf_url"],
+        "json_path":        json_name,
         "convocados_count": len(convocados),
         "has_convocacoes":  len(convocados) > 0,
     })
@@ -245,7 +352,10 @@ def process_prefeitura(pref: dict, watched_names: list[str]) -> dict:
 
     result.update({
         "date": iso_date,
+        "date_display": meta["date_display"],
         "edition_id": meta["edition_id"],
+        "pdf_url": meta["pdf_url"],
+        "json_path": json_name,
         "convocados": convocados,
         "matched_watched": matched
     })
@@ -270,12 +380,15 @@ def run() -> None:
         set_output("convocados_count", "0")
         set_output("has_convocacoes", "false")
         set_output("has_watched_match", "false")
+        set_output("has_errors", "false")
         return
 
     log.info("Prefeituras ativas: %s", [p["id"] for p in active])
 
     watched_names = load_watched_names()
     all_matched_watched = []
+    had_errors = False
+    latest_edition = None
 
     total_convocados = []
     summary_lines    = []
@@ -284,12 +397,19 @@ def run() -> None:
     for pref in active:
         r = process_prefeitura(pref, watched_names)
         if r.get("error"):
+            had_errors = True
             error_msg = single_line(r["error"])
             summary_lines.append(f"❌ {pref['nome']}: Erro — {error_msg}")
             summary_html.append(
                 f"<div><strong>❌ {escape(pref['nome'])}</strong>: Erro — {escape(error_msg)}</div>"
             )
             continue
+
+        if r.get("date") and (latest_edition is None or r["date"] > latest_edition["date"]):
+            latest_edition = {
+                "date": r["date"],
+                "date_display": r.get("date_display") or r["date"],
+            }
 
         count = len(r.get("convocados", []))
         total_convocados.extend(r.get("convocados", []))
@@ -317,7 +437,8 @@ def run() -> None:
             for n in nomes:
                 n_clean = single_line(n)
                 # Destaca o nome na lista se for monitorado
-                is_monitored = any(m in n_clean.upper() for m in watched_names)
+                normalized_candidate = normalize_for_match(n_clean)
+                is_monitored = any(normalize_for_match(m) in normalized_candidate for m in watched_names)
                 bullet = "🎯" if is_monitored else "•"
                 style = "color: #ef4444; font-weight: bold;" if is_monitored else ""
                 
@@ -331,22 +452,29 @@ def run() -> None:
                     f"<div style=\"padding-left: 16px;\">... e mais {count - 5}</div>"
                 )
         else:
-            summary_lines.append(f"📭 {pref['nome']} — sem convocações")
-            summary_html.append(f"<div>📭 {escape(pref['nome'])} — sem convocações</div>")
+            if pref_matched:
+                summary_lines.append(f"🎯 {pref['nome']} — nome monitorado encontrado no texto do diário: {', '.join(pref_matched)}")
+                summary_html.append(
+                    f"<div style=\"color: #ef4444; font-weight: bold;\">🎯 {escape(pref['nome'])} — nome monitorado encontrado no texto do diário: {escape(', '.join(pref_matched))}</div>"
+                )
+            else:
+                summary_lines.append(f"📭 {pref['nome']} — sem convocações")
+                summary_html.append(f"<div>📭 {escape(pref['nome'])} — sem convocações</div>")
 
     # Reconstrói índice global
     rebuild_global_index(active)
 
     # Outputs para GitHub Actions
     total = len(total_convocados)
-    today_str = date.today().strftime("%d/%m/%Y")
+    edition_date = latest_edition["date_display"] if latest_edition else date.today().strftime("%d/%m/%Y")
     
     set_output("convocados_count",  str(total))
     set_output("has_convocacoes",   "true" if total > 0 else "false")
+    set_output("has_errors",        "true" if had_errors else "false")
     set_output("email_summary",     " | ".join(summary_lines))
     set_output("email_summary_html", "".join(summary_html))
     set_output("prefeituras_count", str(len(active)))
-    set_output("edition_date",      today_str)   # usado no subject/commit do workflow
+    set_output("edition_date",      edition_date)   # usado no subject/commit do workflow
     
     # Outputs de monitoramento
     set_output("has_watched_match", "true" if all_matched_watched else "false")

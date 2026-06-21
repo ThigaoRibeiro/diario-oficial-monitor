@@ -56,11 +56,16 @@ Acesse **Settings → Secrets and variables → Actions → New repository secre
 | `EMAIL_USERNAME` | seu-email@gmail.com |
 | `EMAIL_PASSWORD` | Senha de App do Gmail (veja abaixo) |
 | `EMAIL_TO` | Um ou mais emails separados por vírgula: `email1@gmail.com, celular@gmail.com` |
+| `WATCH_NAMES` | Nome(s) monitorado(s), separados por vírgula. Ex: `NOME COMPLETO,OUTRO NOME` |
 
 > **Como gerar a Senha de App do Gmail:**
 > 1. Acesse [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
 > 2. Selecione **Outro (nome personalizado)** → "Diário Oficial Monitor"
 > 3. Copie a senha gerada (16 caracteres) e cole em `EMAIL_PASSWORD`
+
+Para teste local, crie `config/monitorados.json` baseado em
+`config/monitorados.example.json`. Esse arquivo real fica no `.gitignore`
+para evitar publicar dados pessoais.
 
 ### 5. Rodar manualmente o primeiro scrape
 
