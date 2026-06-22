@@ -102,6 +102,27 @@ def normalize_for_match(text: str) -> str:
     return " ".join(without_accents.split())
 
 
+def _watched_name_pattern(normalized_name: str) -> str:
+    """Padrão de busca seguro para um nome monitorado já normalizado.
+
+    Nomes de uma palavra só (ex.: "ESTER") exigem \\b nas duas pontas,
+    qualquer que seja o tamanho, pois podem aparecer como substring de
+    palavras não relacionadas (ex.: "BALESTEROS", "POLIÉSTER",
+    "ESTERILIZAÇÃO"). Nomes completos (com espaço, ex.: "ESTER DA SILVA")
+    já são específicos o suficiente para busca direta por substring.
+    """
+    if " " in normalized_name:
+        return re.escape(normalized_name)
+    return rf"\b{re.escape(normalized_name)}\b"
+
+
+def _is_watched_name_in(name: str, text: str) -> bool:
+    normalized_name = normalize_for_match(name)
+    if not normalized_name:
+        return False
+    return re.search(_watched_name_pattern(normalized_name), normalize_for_match(text)) is not None
+
+
 def check_watched_matches(convocados: list[dict], full_text: str, watched_names: list[str]) -> list[str]:
     """Retorna a lista de nomes monitorados que foram encontrados."""
     matched = []
@@ -115,29 +136,18 @@ def check_watched_matches(convocados: list[dict], full_text: str, watched_names:
         if not normalized_name:
             continue
 
+        pattern = _watched_name_pattern(normalized_name)
+
         # 1. Verifica nos convocados estruturados
-        struct_match = False
-        for c in convocados:
-            if normalized_name in normalize_for_match(c.get("nome", "")):
-                struct_match = True
-                break
-        
-        if struct_match:
+        struct_match = any(
+            re.search(pattern, normalize_for_match(c.get("nome", "")))
+            for c in convocados
+        )
+
+        # 2. Fail-safe: busca no texto bruto do PDF
+        if struct_match or re.search(pattern, normalized_text):
             matched.append(name)
-            continue
-            
-        # 2. Fail-safe: busca no texto bruto do PDF usando limites de palavra (\b)
-        # para evitar substrings indesejadas (como "ester" em "leste", "semestre")
-        # Se o nome for curto (ex: menos de 5 letras), usamos obrigatoriamente \b.
-        # Se for longo (ex: "ESTER DA SILVA"), fazemos busca direta por substring.
-        if len(normalized_name) < 5:
-            pattern = rf"\b{re.escape(normalized_name)}\b"
-        else:
-            pattern = re.escape(normalized_name)
-            
-        if re.search(pattern, normalized_text):
-            matched.append(name)
-            
+
     return matched
 
 
@@ -437,8 +447,7 @@ def run() -> None:
             for n in nomes:
                 n_clean = single_line(n)
                 # Destaca o nome na lista se for monitorado
-                normalized_candidate = normalize_for_match(n_clean)
-                is_monitored = any(normalize_for_match(m) in normalized_candidate for m in watched_names)
+                is_monitored = any(_is_watched_name_in(m, n_clean) for m in watched_names)
                 bullet = "🎯" if is_monitored else "•"
                 style = "color: #ef4444; font-weight: bold;" if is_monitored else ""
                 
