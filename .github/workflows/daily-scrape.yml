@@ -102,18 +102,34 @@ jobs:
           html_body: |
             <html>
             <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #fff7ed;">
-              <div style="background: #c2410c; color: white; padding: 24px; border-radius: 12px 12px 0 0;">
-                <h1 style="margin: 0; font-size: 22px;">Falha tecnica no monitor</h1>
-                <p style="margin: 8px 0 0 0; opacity: .9;">O scraper nao conseguiu concluir uma ou mais prefeituras.</p>
+              <div style="background: linear-gradient(135deg, #c2410c, #9a3412); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center; border-bottom: 4px solid #fbbf24;">
+                <h1 style="margin: 0; font-size: 22px; letter-spacing: 0.04em;">⚠️ FALHA TÉCNICA NO MONITOR</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 14px;">O scraper não conseguiu concluir uma ou mais prefeituras</p>
+                <p style="margin: 4px 0 0 0; opacity: 0.8; font-size: 13px;">Verificação em ${{ steps.scraper.outputs.edition_date }}</p>
               </div>
-              <div style="background: white; padding: 24px; border: 1px solid #fed7aa; border-top: 0; border-radius: 0 0 12px 12px;">
-                <p style="color: #7c2d12; line-height: 1.6;">
-                  Para evitar falso negativo, este e-mail substitui o boletim "sem convocacoes".
-                  Verifique a execucao no GitHub Actions e confira manualmente o Diario Oficial.
-                </p>
-                <div style="background: #fffbeb; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; border: 1px solid #fed7aa;">
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(194,65,12,0.15); border: 2px solid #fed7aa; border-top: none;">
+                <div style="background: #fffbeb; border-left: 4px solid #c2410c; padding: 14px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #9a3412; font-size: 16px;">🔧 Verificação manual recomendada</strong>
+                  <p style="margin: 6px 0 0 0; color: #7c2d12; font-size: 14px; line-height: 1.5;">
+                    Para evitar falso negativo, este e-mail substitui o boletim "sem convocações".
+                    Confira a execução no GitHub Actions e verifique manualmente o Diário Oficial.
+                  </p>
+                </div>
+
+                <div style="background: #fffbeb; border: 1px solid #fed7aa; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 14px; color: #7c2d12; line-height: 1.7;">
                   ${{ steps.scraper.outputs.email_summary_html }}
                 </div>
+
+                <div style="text-align: center; margin-top: 24px;">
+                  <a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+                     style="display: inline-block; background: linear-gradient(135deg, #c2410c, #9a3412); color: white; padding: 14px 28px;
+                            border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; border-bottom: 3px solid #fbbf24;">
+                    🔗 Ver execução no GitHub Actions →
+                  </a>
+                </div>
+                <p style="color: #c2997a; font-size: 11px; margin-top: 28px; border-top: 1px solid #fed7aa; padding-top: 12px; text-align: center;">
+                  Monitoramento automatizado · Atualiza de segunda a sábado às 09h e 20h (BRT)
+                </p>
               </div>
             </body>
             </html>
@@ -135,34 +151,41 @@ jobs:
           html_body: |
             <html>
             <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #fff5f5;">
-              <div style="background: linear-gradient(135deg, #e53e3e, #9b2c2c); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center;">
-                <h1 style="margin: 0; font-size: 24px; letter-spacing: 0.05em;">🚨 CONVOCAÇÃO ENCONTRADA!</h1>
-                <p style="margin: 8px 0 0 0; opacity: 0.9; font-size: 16px; font-weight: bold;">
-                  Nome(s) monitorado(s): ${{ steps.scraper.outputs.watched_matched_names }}
+              <div style="background: linear-gradient(135deg, #c53030, #9b2c2c); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center; border-bottom: 4px solid #f6e05e;">
+                <h1 style="margin: 0; font-size: 23px; letter-spacing: 0.04em;">🚨 CONVOCAÇÃO ENCONTRADA!</h1>
+                <p style="margin: 10px 0 0 0; font-size: 16px; font-weight: bold;">
+                  ${{ steps.scraper.outputs.watched_matched_names }}
                 </p>
-                <p style="margin: 4px 0 0 0; opacity: 0.8; font-size: 14px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
+                <p style="margin: 4px 0 0 0; opacity: 0.85; font-size: 13px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
               </div>
-              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 16px rgba(229,62,62,0.15); border: 2px solid #e53e3e; border-top: none;">
-                <div style="background: #fff5f5; border-left: 4px solid #e53e3e; padding: 16px; border-radius: 4px; margin-bottom: 20px;">
-                  <strong style="color: #c53030; font-size: 18px;">🎯 ATENÇÃO IMEDIATA</strong>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(197,48,48,0.15); border: 2px solid #fc8181; border-top: none;">
+                <div style="background: #fff5f5; border-left: 4px solid #c53030; padding: 14px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #c53030; font-size: 16px;">🎯 ATENÇÃO IMEDIATA — correspondência direta a um nome monitorado</strong>
                   <p style="margin: 6px 0 0 0; color: #742a2a; font-size: 14px; line-height: 1.5;">
-                    Identificamos uma correspondência direta para um ou mais nomes de interesse no Diário Oficial de hoje. Verifique os detalhes e prazos imediatamente no anexo ou no site.
+                    O monitor encontrou um <strong>nome monitorado</strong> no Diário Oficial de hoje.
+                    Verifique abaixo e confirme prazos imediatamente.
                   </p>
                 </div>
+
                 <h3 style="color: #333; margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 8px;">Resumo das Convocações:</h3>
-                <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; border: 1px solid #e0e0e0;">
+                <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 14px; line-height: 1.7;">
                   ${{ steps.scraper.outputs.email_summary_html }}
                 </div>
-                <div style="text-align: center;">
+
+                <div style="background: #f8f9fa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; font-size: 14px; color: #2d3748;">
+                  📎 <strong>PDF do Diário Oficial:</strong> anexado a este e-mail quando disponível.
+                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br">doweb.novaiguacu.rj.gov.br</a>
+                </div>
+
+                <div style="text-align: center; margin-top: 24px;">
                   <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-                     style="display: inline-block; background: linear-gradient(135deg, #e53e3e, #9b2c2c); color: white; padding: 14px 28px;
-                            border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 15px; box-shadow: 0 4px 12px rgba(229,62,62,0.2);">
+                     style="display: inline-block; background: linear-gradient(135deg, #c53030, #9b2c2c); color: white; padding: 14px 28px;
+                            border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; border-bottom: 3px solid #f6e05e;">
                     🔗 Acessar Painel do Monitor →
                   </a>
                 </div>
-                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px; text-align: center;">
-                  Este é um alerta prioritário automático do seu Diário Oficial Monitor.<br>
-                  O PDF completo está anexado a este e-mail.
+                <p style="color: #a0aec0; font-size: 11px; margin-top: 28px; border-top: 1px solid #edf2f7; padding-top: 12px; text-align: center;">
+                  Monitoramento automatizado · Atualiza de segunda a sábado às 09h e 20h (BRT)
                 </p>
               </div>
             </body>
@@ -183,25 +206,39 @@ jobs:
           attachments: tmp/*.pdf
           html_body: |
             <html>
-            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f0f4ff;">
-              <div style="background: linear-gradient(135deg, #1a56db, #0e3a9e); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0;">
-                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Monitor</h1>
-                <p style="margin: 8px 0 0 0; opacity: 0.85; font-size: 15px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f0f4f8;">
+              <div style="background: linear-gradient(135deg, #0e3a9e, #1a56db); color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center; border-bottom: 4px solid #d4af37;">
+                <h1 style="margin: 0; font-size: 22px; letter-spacing: 0.05em;">📋 DIÁRIO OFICIAL MONITOR</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.95; font-size: 15px; font-weight: bold;">
+                  ✅ ${{ steps.scraper.outputs.convocados_count }} candidato(s) convocado(s)
+                </p>
+                <p style="margin: 4px 0 0 0; opacity: 0.8; font-size: 13px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
               </div>
-              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <div style="background: #e8f0fe; border-left: 4px solid #1a56db; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
-                  <strong style="color: #1a56db; font-size: 18px;">✅ ${{ steps.scraper.outputs.convocados_count }} candidato(s) convocado(s)</strong>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e2e8f0;">
+                <div style="background: #ebf8ff; border-left: 4px solid #3182ce; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #2b6cb0; font-size: 16px;">📌 Movimentação no Diário Oficial</strong>
+                  <p style="margin: 6px 0 0 0; color: #2d3748; font-size: 14px; line-height: 1.5;">
+                    Saíram convocações na edição de hoje (ainda <strong>sem</strong> correspondência direta a um nome monitorado). Confira abaixo.
+                  </p>
                 </div>
+
                 <h3 style="color: #333; margin-top: 0;">Resumo por prefeitura:</h3>
-                <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; font-size: 14px; line-height: 1.7; border: 1px solid #e0e0e0;">${{ steps.scraper.outputs.email_summary_html }}</div>
-                <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-                   style="display: inline-block; background: linear-gradient(135deg, #1a56db, #0e3a9e); color: white; padding: 14px 28px;
-                          border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; font-size: 15px;">
-                  🔗 Ver lista completa no site →
-                </a>
-                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px;">
-                  Monitoramento automático · Atualiza às 09h e 20h (BRT)<br>
-                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br" style="color: #1a56db;">doweb.novaiguacu.rj.gov.br</a>
+                <div style="background: #f8f9fa; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; margin-bottom: 20px; font-size: 14px; line-height: 1.7;">${{ steps.scraper.outputs.email_summary_html }}</div>
+
+                <div style="background: #f8f9fa; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; font-size: 14px; color: #2d3748;">
+                  📎 <strong>PDF do Diário Oficial:</strong> anexado a este e-mail quando disponível.
+                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br">doweb.novaiguacu.rj.gov.br</a>
+                </div>
+
+                <div style="text-align: center; margin-top: 24px;">
+                  <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+                     style="display: inline-block; background: linear-gradient(135deg, #0e3a9e, #1a56db); color: white; padding: 14px 28px;
+                            border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; border-bottom: 3px solid #d4af37;">
+                    🔗 Ver lista completa no site →
+                  </a>
+                </div>
+                <p style="color: #a0aec0; font-size: 11px; margin-top: 28px; border-top: 1px solid #edf2f7; padding-top: 12px; text-align: center;">
+                  Monitoramento automatizado · Atualiza de segunda a sábado às 09h e 20h (BRT)
                 </p>
               </div>
             </body>
@@ -222,26 +259,35 @@ jobs:
           attachments: tmp/*.pdf
           html_body: |
             <html>
-            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
-              <div style="background: #607d8b; color: white; padding: 28px 24px; border-radius: 12px 12px 0 0;">
-                <h1 style="margin: 0; font-size: 22px;">📋 Diário Oficial Monitor</h1>
-                <p style="margin: 8px 0 0 0; opacity: 0.85; font-size: 15px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
+            <body style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f7fafc;">
+              <div style="background: #2d3748; color: white; padding: 28px 24px; border-radius: 12px 12px 0 0; text-align: center;">
+                <h1 style="margin: 0; font-size: 20px;">📋 Diário Oficial Monitor</h1>
+                <p style="margin: 8px 0 0 0; opacity: 0.85; font-size: 14px;">Edição de ${{ steps.scraper.outputs.edition_date }}</p>
               </div>
-              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-                <div style="background: #f5f5f5; border-left: 4px solid #90a4ae; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
-                  <strong style="color: #546e7a; font-size: 16px;">📭 Nenhuma convocação encontrada nesta edição</strong>
+              <div style="background: white; padding: 24px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #edf2f7;">
+                <div style="background: #f7fafc; border-left: 4px solid #a0aec0; padding: 12px 16px; border-radius: 4px; margin-bottom: 20px;">
+                  <strong style="color: #4a5568; font-size: 15px;">📭 Nenhuma convocação encontrada nesta edição</strong>
                 </div>
-                <p style="color: #555; line-height: 1.6;">
+
+                <p style="color: #4a5568; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
                   O Diário Oficial de ${{ steps.scraper.outputs.edition_date }} foi verificado em
                   <strong>${{ steps.scraper.outputs.prefeituras_count }}</strong> prefeitura(s) e não contém convocações no momento.
                 </p>
-                <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
-                   style="display: inline-block; background: #546e7a; color: white; padding: 12px 24px;
-                          border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 12px; font-size: 14px;">
-                  🔗 Acessar o site →
-                </a>
-                <p style="color: #999; font-size: 12px; margin-top: 28px; border-top: 1px solid #eee; padding-top: 12px;">
-                  Monitoramento automático · Atualiza às 09h e 20h (BRT)
+
+                <div style="background: #f7fafc; border: 1px solid #edf2f7; border-radius: 8px; padding: 14px 16px; margin-bottom: 20px; font-size: 14px; color: #4a5568;">
+                  📎 <strong>PDF do Diário Oficial:</strong> anexado a este e-mail quando disponível.
+                  Fonte: <a href="https://doweb.novaiguacu.rj.gov.br">doweb.novaiguacu.rj.gov.br</a>
+                </div>
+
+                <div style="text-align: center;">
+                  <a href="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+                     style="display: inline-block; background: #4a5568; color: white; padding: 12px 24px;
+                            border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px;">
+                    🔗 Acessar o site →
+                  </a>
+                </div>
+                <p style="color: #a0aec0; font-size: 11px; margin-top: 28px; border-top: 1px solid #edf2f7; padding-top: 12px; text-align: center;">
+                  Monitoramento automatizado · Atualiza de segunda a sábado às 09h e 20h (BRT)
                 </p>
               </div>
             </body>
