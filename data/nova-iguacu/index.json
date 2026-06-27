@@ -2,6 +2,15 @@
   {
     "date": "2026-06-26",
     "date_display": "26/06/2026",
+    "edition_id": 2317,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_26-06-2026_-_sexta-feira_-_ii_ediCAo_26054130.pdf",
+    "json_path": "2026-06-26_2317.json",
+    "convocados_count": 0,
+    "has_convocacoes": false
+  },
+  {
+    "date": "2026-06-26",
+    "date_display": "26/06/2026",
     "edition_id": 2316,
     "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_26-06-2026_-_sexta-feira_25060742.pdf",
     "json_path": "2026-06-26_2316.json",
