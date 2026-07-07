@@ -1,0 +1,20 @@
+{
+  "date": "2026-07-07",
+  "date_display": "07/07/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2326,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_07-07-2026_-_terca-feira_06061400.pdf",
+  "json_path": "2026-07-07_2326.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "DÉCIMA PRIMEIRA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "CRONOGRAMA DE CONVOCAÇÃO",
+    "EDITAL DE CONVOCAÇÃO Nº 06/2026",
+    "mes médicos exigidos para a 2ª fase da convocação (ANEXO VI do Edi-",
+    "14:30 às 15:30h EDITAL DE CONVOCAÇÃO"
+  ]
+}
