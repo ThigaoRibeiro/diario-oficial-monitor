@@ -1,0 +1,27 @@
+{
+  "date": "2026-07-09",
+  "date_display": "09/07/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2328,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_09-07-2026_-_quinta-feira_08074024.pdf",
+  "json_path": "2026-07-09_2328.json",
+  "convocados_count": 1,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "AVISO DE DISPENSA DE LICITAÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 546,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Admi-",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "Matos para assumir a função até que perdure o período citado. EDITAL DE CONVOCAÇÃO Nº 07/2026",
+    "mes médicos exigidos para a 2ª fase da convocação (ANEXO VI do Edi-"
+  ]
+}
