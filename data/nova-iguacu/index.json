@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-07-14",
+    "date_display": "14/07/2026",
+    "edition_id": 2332,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_14-07-2026_-_terca-feira_13061844.pdf",
+    "json_path": "2026-07-14_2332.json",
+    "convocados_count": 109,
+    "has_convocacoes": true
+  },
+  {
     "date": "2026-07-13",
     "date_display": "13/07/2026",
     "edition_id": 2331,
