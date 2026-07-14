@@ -1,0 +1,1001 @@
+{
+  "date": "2026-07-14",
+  "date_display": "14/07/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2332,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_14-07-2026_-_terca-feira_13061844.pdf",
+  "json_path": "2026-07-14_2332.json",
+  "convocados_count": 109,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "ADISLANE DANTAS RAMALHO LOPES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 918,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ADRIANA SANTOS DA GAMA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 493,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALCIMAR DA SILVA ARAUJO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 638,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALEANE PONTES DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 846,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALICE RAMOS DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1019,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALINE DA COSTA FREITAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 838,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALINE DOS SANTOS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 718,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ALINE HERMINIO DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 769,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANA ALICE CORREIA SILVA DOS SANTOS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1063,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANA CRISTINA DE PAULA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 52,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANA JULIA LEITE FLORENTINO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 949,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANA PAULA MENDES LEMOS AFONSO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANDERSON CRISOSTOMO ALBUQUERQUE DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 522,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANDRESSA REGINA PENA DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1127,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANDREZZA NATASHA DOS SANTOS ADÃO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 461,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ANNA CLARA DA SILVA SOUZA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 822,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "BARBARA LOPES MANZELLA FARIAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 710,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "BEATRIZ DA SILVA FRANÇA CAETANO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 339,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "BIANCA ANDRADE DOS SANTOS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 391,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "CAMILA DOS SANTOS MATERCO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 563,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "CHRISLAYNE NASCIMENTO DE OLIVEIRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1139,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "CLAUDIA VARGAS RIESENBECK DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 538,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "CLAYSON LOPES DA CRUZ DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 548,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "CRISTIANE ANGELO DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 990,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "DANDARA ABREU GUIMARAES INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 755,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "DANIELE DA SILVA MENDES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 51,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "DANIELLE CORREA MELO BELO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 298,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "EDILA CRISTINA BARBOSA DE ARAUJO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 695,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "EDIRLEI VENTURA REIFF DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 188,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "EDUARDA NUNES CANDIDO DOS SANTOS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 726,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "EDUARDO JOSE GOMES INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 621,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ELIEL PRAXEDES DOS SANTOS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 521,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ELISÂNGELA CONCEIÇÃO DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1006,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ELIZANGELA DE OLIVEIRA CORDEIRO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1025,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "EVELYN HELEN DA SILVA SERRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 891,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "FERNANDA MICHAEL DE MATTOS BERTASSONI DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1003,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "GABRIELA DO NASCIMENTO SANTOS SIQUEIRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 235,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "GISELE CRISTINA DA COSTA ROMÃO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 286,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "GLÁUCIA VIEIRA DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 887,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "HILLARY DE SOUZA ARAUJO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1042,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "IGOR OLIVEIRA VIEIRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 342,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ISABELE CRISTINA PAULINO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 435,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ISABELE SALVADOR OLIVEIRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 147,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "IZAIAS FRANCISCO MENDONÇA FREIRE INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 690,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JENIFFER FURTADO DIAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 413,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JESSICA APARECIDA APARECIDA DA SILVA PAULO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 583,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JÉSSICA NASCIMENTO LOBATO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 973,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JOSIANE DOS SANTOS DA SILVA CAVALCANTE PIRES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1140,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JOSIENE DA SILVA BARTOLOMEU DA FONSECA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 399,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JULIANA JULY PEREIRA DA SILVA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 921,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "JÚLIA VITÓRIA PEREIRA DAS CHAGAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1008,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "KAMILA JEAN DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 405,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "KATHLEEN VICTÓRIA GLÓRIA DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 447,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "KELLY CRISTINE FERNANDES FRANCISCO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 877,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LETÍCIA DOS SANTOS VIANNA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1031,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LIDIANE NUNES FERREIRA CALEGARIO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 472,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LILIANE CRISITNA DE MATOS SECUNHA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 665,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LIVYA CRISTINA CIDADE DO NASCIMENTO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 555,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LUCAS DOS SANTOS BEZERRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 866,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LUCIANA ALMEIDA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 469,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LUCIANA DE SOUZA COUTINHO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 640,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LUCIENE DE OLIVEIRA RUFINO INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1111,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "LUCIENE DOS SANTOS NASCIMENTO SOARES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 465,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA APARECIDA ALVES DA SILVA COSTA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 541,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA BEATRIZ BRAZ VILAGELIM DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 481,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA CECÍLIA DE ARAÚJO RAMOS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 498,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA DA GLORIA DA PAIXAO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 318,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA EDUARDA MALAQUIAS DA CRUZ DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 573,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA IONE CORREIA SLIVA SANTOS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 722,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARIANA BARBOSA HENRIQUE DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 970,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MARLI FRANCISCA DA COSTA DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 974,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MATEUS DE OLIVEIRA SOUZA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 781,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MICHELE DA CONCEIÇÃO DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 267,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MICHELLE FERREIRA VIEIRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 753,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MIRIAN SILVA ZAMPILIS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 834,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "MOISÉS DÁRIO LIMA CARDOSO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 200,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "NATHÁLIA CORRÊA DOS REIS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 101,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "NELMA DE LIMA DIAS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 471,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "NILVA APARECIDA SIMÃO DE LIMA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 27,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "PAOLA DOS SANTOS GONÇALVES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 364,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "PATRÍCIA BRITO RAMOS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 893,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "PATRICIA DE ASSUNÇÃO COSTA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 814,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "PRISCILA BARROS DE OLIVEIRA DIAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 486,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "PRISCILA DE SOUZA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 608,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RAISSA RODRIGUES MOREIRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 628,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RAQUEL GOMES DE FARIAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1016,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RAQUEL SANTOS DE LIMA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 383,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RAYSSA CARVALHO GOMES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 912,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RAYSSA DA COSTA BARROS FERREIRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1089,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RENATO CESAR RÊGO SANTIAGO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 526,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "RITA DE CASSIA BARBOSA MARTINS INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 791,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ROSÂNGELA DE SOUZA MINEIRO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 796,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ROSÂNGELA RAMOS DOS SANTOS DO NASCIMENTO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 817,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "ROSANIA AUGUSTA QUARANTINI DIAS DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 452,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "SAMEA DE OLIVEIRA E SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1158,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "SANDRA FERREIRA DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 1072,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "SUELLEN RIBEIRO ROCHA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 496,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TAIANE FIRMINO MANOEL DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 679,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TARCILA DA CONCEIÇÃO DOS SANTOS SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 64,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TATIANA PAZ DA SILVA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 426,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TATIANE GUIMARAES PEDRAL DE SALES DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 531,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TELMA PEREIRA DA CONCEIÇÃO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 862,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "TERESA SANTOS DE LIMA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 381,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "THAYNÁ DE ASSIS LYRA INDEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 601,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "THYFFANY VITÓRIA PIMENTEL DE BRITTO DE ARRUDA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 406,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "VANIA APARECIDA OLIVEIRA RITA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 384,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "VERONICA MARIA BRANDÃO DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 831,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "VICTORIA BATISTA CUNHA DE OLIVEIRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 671,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    },
+    {
+      "nome": "VIVIANE BATISTA DE OLIVEIRA DEFERIDO",
+      "cargo": "Não especificado",
+      "classificacao": 678,
+      "edital": "Edital\n002/2025",
+      "prazo": null,
+      "local": "CISBAF – Avenida Governador Roberto Silveira, 2012 – Posse máximo, há 6 (seis) m",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "CONVOCAÇÃO PARA CONTRATAÇÃO o) Comprovante do Nível de Escolaridade exigida ou Certidão de",
+    "DÉCIMA CONVOCAÇÃO",
+    "CONVOCAÇÃO PARA CONTRATAÇÃO nos requisitos exigidos;",
+    "VIGÉSIMA SÉTIMA CONVOCAÇÃO (cinco) anos, da Justiça Federal (TRF) e Estadual (TJ) (podem ser emitidas"
+  ]
+}
