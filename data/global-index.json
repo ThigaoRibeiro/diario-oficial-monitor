@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-07-16",
+    "date_display": "16/07/2026",
+    "edition_id": 2334,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_16-07-2026_-_quinta-feira_15065930.pdf",
+    "json_path": "2026-07-16_2334.json",
+    "convocados_count": 0,
+    "has_convocacoes": false,
+    "prefeitura_id": "nova-iguacu",
+    "prefeitura_nome": "Nova Iguaçu",
+    "prefeitura_estado": "RJ"
+  },
+  {
     "date": "2026-07-15",
     "date_display": "15/07/2026",
     "edition_id": 2333,
