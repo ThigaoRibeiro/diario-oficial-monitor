@@ -1,0 +1,17 @@
+{
+  "date": "2026-07-17",
+  "date_display": "17/07/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2335,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_17-07-2026_-_sexta-feira_16072010.pdf",
+  "json_path": "2026-07-17_2335.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "EDITAL DE CONVOCAÇÃO",
+    "Ata da reunião do Conselho de Municípios em segunda convocação para"
+  ]
+}
