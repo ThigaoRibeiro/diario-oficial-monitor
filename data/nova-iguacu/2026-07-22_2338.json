@@ -1,0 +1,127 @@
+{
+  "date": "2026-07-22",
+  "date_display": "22/07/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2338,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_22-07-2026_-_quarta-feira_21072018.pdf",
+  "json_path": "2026-07-22_2338.json",
+  "convocados_count": 12,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "MARIA DE FÁTIMA DA SILVA LIMA",
+      "cargo": "Não especificado",
+      "classificacao": 17,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "CARMEN LÚCIA ESTEVES DE JESUS",
+      "cargo": "Não especificado",
+      "classificacao": 18,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "CAROLINE COSTA FEITOSA",
+      "cargo": "Não especificado",
+      "classificacao": 19,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "TANIA CRISTINA RODRIGUES DE MOURA",
+      "cargo": "Não especificado",
+      "classificacao": 20,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "RAYSSA CARVALHO GOMES",
+      "cargo": "Não especificado",
+      "classificacao": 31,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "LEANDRA SCHMIDT DO NASCIMENTO",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "PATRÍCIA FREITAS DOS SANTOS AMORIM",
+      "cargo": "Não especificado",
+      "classificacao": 4,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "DANIELE SILVA ARAUJO DE SOUZA",
+      "cargo": "Não especificado",
+      "classificacao": 37,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "KARINA MENEZES FERREIRA",
+      "cargo": "Não especificado",
+      "classificacao": 38,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "DARA MACHADO THIAGO",
+      "cargo": "Não especificado",
+      "classificacao": 39,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "VITÓRIA CORREA LAURIANO",
+      "cargo": "Não especificado",
+      "classificacao": 40,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    },
+    {
+      "nome": "BARBARA LOPES MANZELLA FARIAS",
+      "cargo": "Não especificado",
+      "classificacao": 36,
+      "edital": null,
+      "prazo": null,
+      "local": null,
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "DÉCIMA TERCEIRA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "no Processo Administrativo nº 2025/182.358, a comparecerem à sede da CRONOGRAMA DE CONVOCAÇÃO",
+    "1ª CONVOCAÇÃO DO PROCESSO SELETIVO SIMPLIFICADO EDITAL– SEMED nº 002/2026."
+  ]
+}
