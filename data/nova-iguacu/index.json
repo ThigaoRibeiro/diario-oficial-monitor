@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-08-10",
+    "date_display": "10/08/2026",
+    "edition_id": 2353,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_10-08-2026_-_segunda-feira_07045349.pdf",
+    "json_path": "2026-08-10_2353.json",
+    "convocados_count": 0,
+    "has_convocacoes": false
+  },
+  {
     "date": "2026-08-07",
     "date_display": "07/08/2026",
     "edition_id": 2352,
