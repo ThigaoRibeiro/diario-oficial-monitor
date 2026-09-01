@@ -1,0 +1,17 @@
+{
+  "date": "2026-09-01",
+  "date_display": "01/09/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2374,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_01-09-2026_-_terca-feira_01122311.pdf",
+  "json_path": "2026-09-01_2374.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "tro do prazo de validade de sua proposta, deverá atender à convocação da",
+    "EDITAL DE CONVOCAÇÃO"
+  ]
+}
