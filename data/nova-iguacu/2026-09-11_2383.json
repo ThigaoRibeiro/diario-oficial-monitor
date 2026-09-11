@@ -1,0 +1,73 @@
+{
+  "date": "2026-09-11",
+  "date_display": "11/09/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2383,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_11-09-2026_-_sexta-feira_10064243.pdf",
+  "json_path": "2026-09-11_2383.json",
+  "convocados_count": 6,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "DOS CRONOGRAMAS E PRAZOS",
+      "cargo": "Não especificado",
+      "classificacao": 7,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    },
+    {
+      "nome": "DAS OBSERVAÇÕES FINAIS",
+      "cargo": "Não especificado",
+      "classificacao": 8,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    },
+    {
+      "nome": "DADOS DO PROJETO CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 1,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    },
+    {
+      "nome": "LOCAIS DE REALIZAÇÃO",
+      "cargo": "Não especificado",
+      "classificacao": 3,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    },
+    {
+      "nome": "DIVULGAÇÃO DO PROJETO CULTURAL",
+      "cargo": "Não especificado",
+      "classificacao": 9,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    },
+    {
+      "nome": "TÓPICOS ADICIONAIS",
+      "cargo": "Não especificado",
+      "classificacao": 11,
+      "edital": null,
+      "prazo": "08/09/2027",
+      "local": "Municipal de Assistência Social (SEMAS) responsável pelo",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "O SECRETÁRIO MUNICIPAL DE ADMINISTRAÇÃO, no uso de suas atri- CONVOCAÇÃO",
+    "GIÃO DE COMENDADOR SOARES E CONVOCAÇÃO DO RESPECTIVO",
+    "Art. 3º - Comunicar o(a) Conselheiro(a) convocado(a) comparecer à sede"
+  ]
+}
