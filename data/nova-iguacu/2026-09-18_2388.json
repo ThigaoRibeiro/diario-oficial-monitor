@@ -1,0 +1,20 @@
+{
+  "date": "2026-09-18",
+  "date_display": "18/09/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2388,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_18-09-2026_-_sexta-feira_17050525.pdf",
+  "json_path": "2026-09-18_2388.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "Art. 3º- Fica CONVOCADO o(a) Conselheiro(a) Tutelar suplente da Região",
+    "Art. 4º- O(a) Conselheiro(a) Tutelar convocado(a) deverá comparecer à",
+    "CONSIDERANDO que a referida decisão judicial deferiu tutela de urgência DÉCIMA OITAVA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "ata convocação e nomeação do respectivo suplente, observada a ordem",
+    "CRONOGRAMA DE CONVOCAÇÃO"
+  ]
+}
