@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-21",
+  "date_display": "21/09/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2389,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_21-09-2026_-_segunda-feira_18051815.pdf",
+  "json_path": "2026-09-21_2389.json",
+  "convocados_count": 1,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "MARCOS AURELIO DE CUIDADOR SOCIAL NO-",
+      "cargo": "Não especificado",
+      "classificacao": 2026,
+      "edital": null,
+      "prazo": null,
+      "local": "BOZA PEDAGOGO 2.550,00 13/05/2026",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "EDITAL DE CONVOCAÇÃO"
+  ]
+}
