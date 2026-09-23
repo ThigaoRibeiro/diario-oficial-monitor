@@ -1,0 +1,18 @@
+{
+  "date": "2026-09-23",
+  "date_display": "23/09/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2391,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_23-09-2026_-_quarta-feira_22050926.pdf",
+  "json_path": "2026-09-23_2391.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "de Nova Iguaçu, comunico que coube metade do total a GILSON BELLO Décima Nona Convocação dos Classificados",
+    "CRONOGRAMA DE CONVOCAÇÃO EDUCAÇÃO",
+    "EDITAL DE CONVOCAÇÃO"
+  ]
+}
