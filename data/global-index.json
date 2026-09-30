@@ -2,6 +2,18 @@
   {
     "date": "2026-09-29",
     "date_display": "29/09/2026",
+    "edition_id": 2399,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_29-09-2026_-_terca-feira_-_edicao_extraordinaria_29052937.pdf",
+    "json_path": "2026-09-29_2399.json",
+    "convocados_count": 0,
+    "has_convocacoes": false,
+    "prefeitura_id": "nova-iguacu",
+    "prefeitura_nome": "Nova Iguaçu",
+    "prefeitura_estado": "RJ"
+  },
+  {
+    "date": "2026-09-29",
+    "date_display": "29/09/2026",
     "edition_id": 2398,
     "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_29-09-2026_-_terca-feira_-_ii_ediCAo_29105204.pdf",
     "json_path": "2026-09-29_2398.json",
