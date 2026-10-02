@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-02",
+  "date_display": "02/10/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2402,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_02-10-2026_-_sexta-feira_01053041.pdf",
+  "json_path": "2026-10-02_2402.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "______, o(a) servidor(a) nome, cargo, matrícula nº ______, em atendimento CONVOCAÇÃO PARA CONTRATAÇÃO",
+    "Para constar, lavrou-se o presente Termo, que segue assinado pelo(a) ser- DÉCIMA OITAVA CONVOCAÇÃO",
+    "COVID-19); CONVOCAÇÃO PARA CONTRATAÇÃO",
+    "público. (até 02 (dois) vínculos no setor público); DÉCIMA NONA CONVOCAÇÃO"
+  ]
+}
