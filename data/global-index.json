@@ -1,5 +1,17 @@
 [
   {
+    "date": "2026-10-05",
+    "date_display": "05/10/2026",
+    "edition_id": 2403,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_05-10-2026_-_segunda-feira_02070230.pdf",
+    "json_path": "2026-10-05_2403.json",
+    "convocados_count": 0,
+    "has_convocacoes": false,
+    "prefeitura_id": "nova-iguacu",
+    "prefeitura_nome": "Nova Iguaçu",
+    "prefeitura_estado": "RJ"
+  },
+  {
     "date": "2026-10-02",
     "date_display": "02/10/2026",
     "edition_id": 2402,
