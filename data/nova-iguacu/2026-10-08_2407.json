@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-08",
+  "date_display": "08/10/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2407,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_08-10-2026_-_quinta-feira_07062446.pdf",
+  "json_path": "2026-10-08_2407.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "sibilitada a convocação do(a) suplente subsequente, observada a ordem de"
+  ]
+}
