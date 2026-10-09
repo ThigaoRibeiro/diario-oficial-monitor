@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-09",
+  "date_display": "09/10/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2408,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_09-10-2026_-_sexta-feira_08055138.pdf",
+  "json_path": "2026-10-09_2408.json",
+  "convocados_count": 4,
+  "has_convocacoes": true,
+  "convocados": [
+    {
+      "nome": "SANTOS BRITO CORRÊNCIA",
+      "cargo": "Não especificado",
+      "classificacao": 62,
+      "edital": null,
+      "prazo": null,
+      "local": "Municipal de Assistência Social – SEMAS, situada na Avenida",
+      "observacao": null
+    },
+    {
+      "nome": "EXTRATO DE TERMO ADITIVO",
+      "cargo": "Não especificado",
+      "classificacao": 283,
+      "edital": null,
+      "prazo": "06/10/2027",
+      "local": "Municipal de Assistência Social: II – Representantes do Poder Público:",
+      "observacao": null
+    },
+    {
+      "nome": "EDUCAÇÃO E PONTO A PONTO TELECOMUNICACOES DO BRASIL",
+      "cargo": "Não especificado",
+      "classificacao": 287,
+      "edital": null,
+      "prazo": "06/10/2027",
+      "local": "Municipal de Assistência Social: II – Representantes do Poder Público:",
+      "observacao": null
+    },
+    {
+      "nome": "MARIA VIRGÍNIA ANDRADE ROCHA FEITOSA",
+      "cargo": "Não especificado",
+      "classificacao": 298,
+      "edital": null,
+      "prazo": "06/10/2027",
+      "local": "Municipal de Assistência Social: II – Representantes do Poder Público:",
+      "observacao": null
+    }
+  ],
+  "sections_found": [
+    "ELAINE MEDEIROS FONSECA DA SILVA CRONOGRAMA DE CONVOCAÇÃO",
+    "VIGÉSIMA CONVOCAÇÃO DOS CLASSIFICADOS COSTA BAR- 134.XXX.XXX-79 95",
+    "Art. 5º Tornar pública a composição da Comissão de Ética dos Conselhos convocado o respectivo representante suplente."
+  ]
+}
