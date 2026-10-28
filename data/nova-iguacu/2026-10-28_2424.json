@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-28",
+  "date_display": "28/10/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2424,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_28-10-2026_-_quarta-feira_27073201.pdf",
+  "json_path": "2026-10-28_2424.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "CRONOGRAMA DE CONVOCAÇÃO",
+    "Vigésima Quarta Convocação dos Classificados",
+    "Art. 3º - Comunicar o(a) Conselheiro(a) convocado(a) comparecer à sede do",
+    "convocados e a tabela de prazos, exclusiva para o suplente convocado, es-"
+  ]
+}
