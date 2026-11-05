@@ -2,6 +2,18 @@
   {
     "date": "2026-11-04",
     "date_display": "04/11/2026",
+    "edition_id": 2428,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_04-11-2026_-_quarta-feira_-_ii_ediCAo_04055429.pdf",
+    "json_path": "2026-11-04_2428.json",
+    "convocados_count": 0,
+    "has_convocacoes": false,
+    "prefeitura_id": "nova-iguacu",
+    "prefeitura_nome": "Nova Iguaçu",
+    "prefeitura_estado": "RJ"
+  },
+  {
+    "date": "2026-11-04",
+    "date_display": "04/11/2026",
     "edition_id": 2427,
     "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_04-11-2026_-_quarta-feira_03074046.pdf",
     "json_path": "2026-11-04_2427.json",
