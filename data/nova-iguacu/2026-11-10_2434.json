@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-10",
+  "date_display": "10/11/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2434,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_10-11-2026_-_terca-feira_09064250.pdf",
+  "json_path": "2026-11-10_2434.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "CONVOCAÇÃO assim o exigir;",
+    "contar da publicação desta convocação, no Setor de Comissão para Avali-"
+  ]
+}
