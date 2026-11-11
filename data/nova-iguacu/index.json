@@ -1,5 +1,14 @@
 [
   {
+    "date": "2026-11-11",
+    "date_display": "11/11/2026",
+    "edition_id": 2435,
+    "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_11-11-2026_-_quarta-feira_10055549.pdf",
+    "json_path": "2026-11-11_2435.json",
+    "convocados_count": 0,
+    "has_convocacoes": false
+  },
+  {
     "date": "2026-11-10",
     "date_display": "10/11/2026",
     "edition_id": 2434,
