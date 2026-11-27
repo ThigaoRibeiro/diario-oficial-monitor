@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-27",
+  "date_display": "27/11/2026",
+  "prefeitura_id": "nova-iguacu",
+  "prefeitura_nome": "Nova Iguaçu",
+  "prefeitura_estado": "RJ",
+  "edition_id": 2448,
+  "pdf_url": "https://doweb.novaiguacu.rj.gov.br/uploads/pmni_de_27-11-2026_-_sexta-feira_26063933.pdf",
+  "json_path": "2026-11-27_2448.json",
+  "convocados_count": 0,
+  "has_convocacoes": false,
+  "convocados": [],
+  "sections_found": [
+    "CRONOGRAMA DE CONVOCAÇÃO",
+    "TERCEIRA CONVOCAÇÃO DOS CLASSIFICADOS",
+    "Ata da reunião do Conselho de Municípios em segunda convocação para"
+  ]
+}
